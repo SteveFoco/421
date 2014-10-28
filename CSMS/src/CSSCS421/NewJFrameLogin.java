@@ -32,11 +32,11 @@ public class NewJFrameLogin extends javax.swing.JFrame {
     jPanel1 = new javax.swing.JPanel();
     jLabelUsername = new javax.swing.JLabel();
     jLabelPassword = new javax.swing.JLabel();
-    jTxtUsername = new javax.swing.JTextField();
     jTxtPassword = new javax.swing.JTextField();
     jBtnLogin = new javax.swing.JButton();
     jLabel3 = new javax.swing.JLabel();
     jBtnCancelLogin = new javax.swing.JButton();
+    jTxtUsername = new javax.swing.JTextField();
 
     jTable1.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
@@ -59,13 +59,6 @@ public class NewJFrameLogin extends javax.swing.JFrame {
     jLabelPassword.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
     jLabelPassword.setText("Password:");
 
-    jTxtUsername.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-    jTxtUsername.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jTxtUsernameActionPerformed(evt);
-      }
-    });
-
     jTxtPassword.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
 
     jBtnLogin.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
@@ -82,6 +75,8 @@ public class NewJFrameLogin extends javax.swing.JFrame {
     jBtnCancelLogin.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
     jBtnCancelLogin.setText("Cancel");
 
+    jTxtUsername.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -95,15 +90,15 @@ public class NewJFrameLogin extends javax.swing.JFrame {
               .addComponent(jLabelPassword)
               .addComponent(jLabelUsername))
             .addGap(18, 18, 18)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-              .addComponent(jTxtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-              .addComponent(jTxtPassword)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(jTxtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jTxtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(10, 10, 10)
             .addComponent(jBtnLogin)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(jBtnCancelLogin)))
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addGap(19, 20, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,10 +133,6 @@ public class NewJFrameLogin extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
-
-    private void jTxtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtUsernameActionPerformed
 
   private void jBtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLoginActionPerformed
     this.setVisible(false);
