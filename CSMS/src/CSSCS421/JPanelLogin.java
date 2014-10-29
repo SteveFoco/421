@@ -117,8 +117,7 @@ public class JPanelLogin extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
   private void jBtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLoginActionPerformed
-    this.setVisible(false);
-    //JFrameMainWindow.add(new NewJPanel1());
+    CSMS.switchTo("CONFLICTS");
   }//GEN-LAST:event_jBtnLoginActionPerformed
 
 
