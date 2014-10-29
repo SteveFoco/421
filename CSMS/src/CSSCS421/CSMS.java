@@ -38,6 +38,10 @@ public class CSMS {
     JPanelConflicts conflictsCard = new JPanelConflicts();
     JPanelModify modifyCard = new JPanelModify();
     JPanelScheduleView scheduleViewCard = new JPanelScheduleView();
+    JPanelChairHome chairHomeCard = new JPanelChairHome();
+    JPanelDeleteAccount deleteAccountCard = new JPanelDeleteAccount();
+    JPanelNewUserAccount newUserAccountCard = new JPanelNewUserAccount();
+    JPanelUpdateAccount updateAccountCard = new JPanelUpdateAccount();
     
     //Create the panel to contain the cards
     cardPanel = new JPanel(new CardLayout());
@@ -50,9 +54,16 @@ public class CSMS {
     cardPanel.add(conflictsCard, "CONFLICTS");
     cardPanel.add(modifyCard, "MODIFY");
     cardPanel.add(scheduleViewCard, "SCHEDULE VIEW");
+    cardPanel.add(chairHomeCard, "CHAIR HOME");
+    cardPanel.add(deleteAccountCard, "DELETE ACCOUNT");
+    cardPanel.add(newUserAccountCard, "NEW USER");
+    cardPanel.add(updateAccountCard, "UPDATE ACCOUNT");
     
     //Add cards panel to pane
+    pane.add(new JPanelHeader(), BorderLayout.PAGE_START);
     pane.add(cardPanel, BorderLayout.CENTER);
+    
+    
   }
   
   public static void switchTo(String cardCode) {
@@ -60,25 +71,22 @@ public class CSMS {
     c1.show(cardPanel, cardCode);
   }
 
-  //public static void switchToCourseSearchCard() {
-  //  CardLayout c2 = (CardLayout)(cardPanel.getLayout());
-  //  c2.show(cardPanel, "HOME");
-  //}
-    
   public static void createGui() {
-    JFrame mainFrame = new JFrame("Course Scheduling Management Ssytem");
+    //JFrameMain mainFrame = new JFrameMain();
+    JFrame mainFrame = new JFrame();
     
     mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    mainFrame.setSize(500,400);
+    mainFrame.setSize(750,600);
+    mainFrame.setTitle("Course Scheduling Management System");
+    mainFrame.setBackground(new java.awt.Color(255, 51, 51));
     
     mainFrame.setLocationRelativeTo(null);
-    //mainFrame.setLayout(new BorderLayout());
+    mainFrame.setLayout(new BorderLayout());
     
     CSMS csms = new CSMS();
     csms.addComponentToPane(mainFrame.getContentPane());
     
     //Display the window.
-    mainFrame.pack();
     mainFrame.setVisible(true);
     
   }
