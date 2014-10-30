@@ -34,7 +34,6 @@ public class JPanelHome extends javax.swing.JPanel {
     jBtnVerifySched = new javax.swing.JButton();
     jBtnGenerateSched = new javax.swing.JButton();
     jBtnSched = new javax.swing.JButton();
-    jBtnLogoutSched = new javax.swing.JButton();
 
     jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jLabel3.setText("Schedule Adjustment");
@@ -56,9 +55,6 @@ public class JPanelHome extends javax.swing.JPanel {
     jBtnSched.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
     jBtnSched.setText("Something Schedule");
 
-    jBtnLogoutSched.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-    jBtnLogoutSched.setText("Logout");
-
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -66,28 +62,22 @@ public class JPanelHome extends javax.swing.JPanel {
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addContainerGap()
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jLabel3)
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addComponent(jLabel3)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jBtnLogoutSched))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jBtnGenerateSched)
-              .addComponent(jBtnSearchSched))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+              .addComponent(jBtnGenerateSched, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(jBtnSearchSched, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGap(18, 18, 18)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jBtnVerifySched)
-              .addComponent(jBtnSched))
-            .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+              .addComponent(jBtnSched, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(jBtnVerifySched, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addContainerGap()
-        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel3)
-          .addComponent(jBtnLogoutSched))
+        .addComponent(jLabel3)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jBtnSearchSched)
@@ -118,7 +108,6 @@ public class JPanelHome extends javax.swing.JPanel {
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton jBtnGenerateSched;
-  private javax.swing.JButton jBtnLogoutSched;
   private javax.swing.JButton jBtnSched;
   private javax.swing.JButton jBtnSearchSched;
   private javax.swing.JButton jBtnVerifySched;

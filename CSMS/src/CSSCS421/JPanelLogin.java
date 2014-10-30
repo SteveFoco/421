@@ -130,7 +130,7 @@ public class JPanelLogin extends javax.swing.JPanel {
   }// </editor-fold>//GEN-END:initComponents
 
   private void jBtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLoginActionPerformed
-    CSMS.switchTo("COURSE SEARCH");
+    CSMS.switchTo("HOME");
   }//GEN-LAST:event_jBtnLoginActionPerformed
 
   private void jTxtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtUsernameActionPerformed
