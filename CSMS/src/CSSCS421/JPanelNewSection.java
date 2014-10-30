@@ -6,6 +6,8 @@
 
 package CSSCS421;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Steve
@@ -58,6 +60,11 @@ public class JPanelNewSection extends javax.swing.JPanel {
 
     jBtnSubmitMod.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnSubmitMod.setText("Submit Course");
+    jBtnSubmitMod.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jBtnSubmitModActionPerformed(evt);
+      }
+    });
 
     jLabelUsername1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jLabelUsername1.setText("Course Name:");
@@ -76,6 +83,11 @@ public class JPanelNewSection extends javax.swing.JPanel {
 
     jBtnBackMod.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnBackMod.setText("Back To Course Listing");
+    jBtnBackMod.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jBtnBackModActionPerformed(evt);
+      }
+    });
 
     jtxtNumberMod.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
@@ -117,10 +129,10 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jComBoxInstructorCS.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Instructor", "Cho, I", "James, Scott" }));
 
     jComBoxDaysMod1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jComBoxDaysMod1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Room" }));
+    jComBoxDaysMod1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SE 117" }));
 
     jComBoxDaysMod2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jComBoxDaysMod2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Time" }));
+    jComBoxDaysMod2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12:30 - 2:20" }));
 
     jComBoxDeptMod.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jComBoxDeptMod.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Dept.", "Accounting", "Art", "Biology", "Black Studies", "Col Business & Management", "Communication & Digital Media", "Chemistry", "Computer Info Syst", "Criminal Justice", "Communication", "Computer Science", "Elec & Computer Engr", "Economics", "Education Leadership", "English Lang Program", "English", "Educational Tech & Development", "Engineering Tech Management", "Finance", "French", "Geography", "German", "Gender Studies", "History", "Honors", "Health Sciences", "Japanese", "Kinesiology", "Latin", "Law", "Leadership and Service", "Administrative Science", "Mathematical Sciences", "Mechanical Engr", "Master of Energy & Materials", "Modern Foreign Lang", "Management", "Marketing", "Medical Laboratory Science", "Music Education", "Music", "Natural Science", "Nursing", "Occupational Therapy", "Philosophy", "Physics", "Political Science", "Psychology", "Robert Fellows Seminar", "Rhetoric & Prof Writing", "Sociology", "Spanish", "Social Work", "Teaching Chinese As a Foreign", "Teacher Education--Mis/Sec Sch", "Teacher Education", "Theater", "Youth Services" }));
@@ -260,6 +272,19 @@ public class JPanelNewSection extends javax.swing.JPanel {
   private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_jComboBox1ActionPerformed
+
+  private void jBtnSubmitModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSubmitModActionPerformed
+    JOptionPane.showMessageDialog(null, "Course has been created");
+    CSMS.switchTo("COURSE LISTING");
+  }//GEN-LAST:event_jBtnSubmitModActionPerformed
+
+  private void jBtnBackModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackModActionPerformed
+    int result = JOptionPane.showConfirmDialog(null, 
+    "Are you sure you wish to go back?", null, JOptionPane.YES_NO_OPTION);
+    if(result == JOptionPane.YES_OPTION) {
+      CSMS.switchTo("COURSE LISTING");
+    } 
+  }//GEN-LAST:event_jBtnBackModActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

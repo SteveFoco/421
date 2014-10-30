@@ -32,7 +32,7 @@ public class CSMS {
     
     //Create the cards
     JPanelLogin loginCard = new JPanelLogin();
-    JPanelHome homeCard = new JPanelHome();
+    JPanelHome1 homeCard = new JPanelHome1();
     JPanelCourseSearch courseSearchCard = new JPanelCourseSearch();
     JPanelCourseListing courseListingCard = new JPanelCourseListing();
     JPanelConflicts conflictsCard = new JPanelConflicts();
@@ -43,6 +43,7 @@ public class CSMS {
     JPanelNewUserAccount newUserAccountCard = new JPanelNewUserAccount();
     JPanelUpdateAccount updateAccountCard = new JPanelUpdateAccount();
     JPanelAddCourse addCourseCard = new JPanelAddCourse();
+    JPanelNewSection newSectionCard = new JPanelNewSection();
     
     //Create the panel to contain the cards
     cardPanel = new JPanel(new CardLayout());
@@ -60,6 +61,7 @@ public class CSMS {
     cardPanel.add(newUserAccountCard, "NEW USER");
     cardPanel.add(updateAccountCard, "UPDATE ACCOUNT");
     cardPanel.add(addCourseCard, "ADD COURSE");
+    cardPanel.add(newSectionCard, "NEW SECTION");
     
     //Add cards panel to pane
     pane.add(new JPanelHeader(), BorderLayout.PAGE_START);

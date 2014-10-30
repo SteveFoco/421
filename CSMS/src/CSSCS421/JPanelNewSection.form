@@ -180,6 +180,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Submit Course"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnSubmitModActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelUsername1">
           <Properties>
@@ -228,6 +231,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Back To Course Listing"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnBackModActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jtxtNumberMod">
           <Properties>
@@ -370,7 +376,7 @@
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="1">
-                <StringItem index="0" value="Select Room"/>
+                <StringItem index="0" value="SE 117"/>
               </StringArray>
             </Property>
           </Properties>
@@ -382,7 +388,7 @@
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="1">
-                <StringItem index="0" value="Select Time"/>
+                <StringItem index="0" value="12:30 - 2:20"/>
               </StringArray>
             </Property>
           </Properties>

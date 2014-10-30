@@ -34,7 +34,6 @@ public class JPanelLogin extends javax.swing.JPanel {
     jTxtPassword = new javax.swing.JTextField();
     jBtnLogin = new javax.swing.JButton();
     jLabel3 = new javax.swing.JLabel();
-    jBtnCancelLogin = new javax.swing.JButton();
     jTxtUsername = new javax.swing.JTextField();
 
     jPanel1.setPreferredSize(new java.awt.Dimension(736, 145));
@@ -57,9 +56,6 @@ public class JPanelLogin extends javax.swing.JPanel {
 
     jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
     jLabel3.setText("Login");
-
-    jBtnCancelLogin.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jBtnCancelLogin.setText("Cancel");
 
     jTxtUsername.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jTxtUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -86,9 +82,7 @@ public class JPanelLogin extends javax.swing.JPanel {
               .addComponent(jTxtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(20, 20, 20)
-            .addComponent(jBtnLogin)
-            .addGap(30, 30, 30)
-            .addComponent(jBtnCancelLogin)))
+            .addComponent(jBtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
         .addContainerGap(264, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
@@ -105,9 +99,7 @@ public class JPanelLogin extends javax.swing.JPanel {
           .addComponent(jLabelPassword)
           .addComponent(jTxtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jBtnLogin)
-          .addComponent(jBtnCancelLogin))
+        .addComponent(jBtnLogin)
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
@@ -139,7 +131,6 @@ public class JPanelLogin extends javax.swing.JPanel {
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton jBtnCancelLogin;
   private javax.swing.JButton jBtnLogin;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabelPassword;

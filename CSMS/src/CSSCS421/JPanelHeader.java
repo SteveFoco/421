@@ -46,6 +46,11 @@ public class JPanelHeader extends javax.swing.JPanel {
 
     jBtnLogoutCS.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
     jBtnLogoutCS.setText("Logout");
+    jBtnLogoutCS.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jBtnLogoutCSActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
     this.setLayout(layout);
@@ -59,7 +64,7 @@ public class JPanelHeader extends javax.swing.JPanel {
           .addGroup(layout.createSequentialGroup()
             .addGap(32, 32, 32)
             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jBtnLogoutCS))
           .addComponent(jLabel2))
         .addContainerGap())
@@ -77,6 +82,10 @@ public class JPanelHeader extends javax.swing.JPanel {
         .addComponent(jLabel2))
     );
   }// </editor-fold>//GEN-END:initComponents
+
+  private void jBtnLogoutCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLogoutCSActionPerformed
+    CSMS.switchTo("LOGIN");
+  }//GEN-LAST:event_jBtnLogoutCSActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

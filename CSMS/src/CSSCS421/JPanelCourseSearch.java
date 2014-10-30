@@ -46,6 +46,7 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
     jtxtNumberCS = new javax.swing.JTextField();
     jBtnSearchCS = new javax.swing.JButton();
     jLabelPassword2 = new javax.swing.JLabel();
+    jBtnBackCS = new javax.swing.JButton();
 
     setPreferredSize(new java.awt.Dimension(736, 408));
 
@@ -112,12 +113,21 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
     jLabelPassword2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jLabelPassword2.setText("Days:");
 
+    jBtnBackCS.setBackground(new java.awt.Color(0, 204, 255));
+    jBtnBackCS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jBtnBackCS.setText("Back");
+    jBtnBackCS.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jBtnBackCSActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
     this.setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addContainerGap(128, Short.MAX_VALUE)
         .addComponent(jLabel3)
         .addGap(457, 457, 457))
       .addGroup(layout.createSequentialGroup()
@@ -143,19 +153,20 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
             .addGap(198, 198, 198)
             .addComponent(jLabelPassword))
           .addGroup(layout.createSequentialGroup()
-            .addComponent(jComBoxDeptSearchCS, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(59, 59, 59)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(jComBoxDeptSearchCS, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jBtnBackCS, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(58, 58, 58)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(jLabelUsername3)
               .addComponent(jComBoxSemesterCS, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jComBoxInstructorCS, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jComBoxCreditsCS, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabelPassword3))))
+              .addComponent(jLabelPassword3)
+              .addComponent(jBtnSearchCS, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-      .addGroup(layout.createSequentialGroup()
-        .addGap(25, 25, 25)
-        .addComponent(jBtnSearchCS, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(29, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,9 +201,11 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
           .addComponent(jtxtLineNumberCS2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jComBoxDaysCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jComBoxCreditsCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-        .addComponent(jBtnSearchCS)
-        .addGap(25, 25, 25))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jBtnSearchCS)
+          .addComponent(jBtnBackCS))
+        .addGap(41, 41, 41))
     );
   }// </editor-fold>//GEN-END:initComponents
 
@@ -204,8 +217,13 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
     CSMS.switchTo("COURSE LISTING");
   }//GEN-LAST:event_jBtnSearchCSActionPerformed
 
+  private void jBtnBackCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackCSActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jBtnBackCSActionPerformed
+
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JButton jBtnBackCS;
   private javax.swing.JButton jBtnSearchCS;
   private javax.swing.JComboBox jComBoxCreditsCS;
   private javax.swing.JComboBox jComBoxDaysCS;
