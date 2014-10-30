@@ -82,6 +82,11 @@ public class JPanelCourseListing extends javax.swing.JPanel {
 
     jBtnAddCL.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnAddCL.setText("Add New Course");
+    jBtnAddCL.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jBtnAddCLActionPerformed(evt);
+      }
+    });
 
     jLabelUsername.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
     jLabelUsername.setText("0 Courses Found");
@@ -137,6 +142,10 @@ public class JPanelCourseListing extends javax.swing.JPanel {
   private void jBtnModifyCLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnModifyCLActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_jBtnModifyCLActionPerformed
+
+  private void jBtnAddCLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddCLActionPerformed
+    CSMS.switchTo("NEW SECTION");
+  }//GEN-LAST:event_jBtnAddCLActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

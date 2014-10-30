@@ -42,6 +42,7 @@ public class CSMS {
     JPanelDeleteAccount deleteAccountCard = new JPanelDeleteAccount();
     JPanelNewUserAccount newUserAccountCard = new JPanelNewUserAccount();
     JPanelUpdateAccount updateAccountCard = new JPanelUpdateAccount();
+    JPanelNewSection newSectionCard = new JPanelNewSection();
     
     //Create the panel to contain the cards
     cardPanel = new JPanel(new CardLayout());
@@ -58,6 +59,7 @@ public class CSMS {
     cardPanel.add(deleteAccountCard, "DELETE ACCOUNT");
     cardPanel.add(newUserAccountCard, "NEW USER");
     cardPanel.add(updateAccountCard, "UPDATE ACCOUNT");
+    cardPanel.add(newSectionCard, "NEW SECTION");
     
     //Add cards panel to pane
     pane.add(new JPanelHeader(), BorderLayout.PAGE_START);
