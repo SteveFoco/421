@@ -46,10 +46,10 @@ public class JPanelCourseListing extends javax.swing.JPanel {
     jTableCourseListing.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
     jTableCourseListing.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-
+        {"CS471", "Senior CS Capstone",  new Integer(732), "I. Cho", "MW", "12:30-2:20", "SE117", "8"}
       },
       new String [] {
-        "Course Number", "Name", "Line No.", "Professor", "Days", "Time", "Room", "Students"
+        "Course #", "Name", "Line No.", "Professor", "Days", "Time", "Room", "Students"
       }
     ) {
       Class[] types = new Class [] {
