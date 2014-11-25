@@ -45,6 +45,7 @@ public class CSMS {
     JPanelAddCourse addCourseCard = new JPanelAddCourse();
     JPanelNewSection newSectionCard = new JPanelNewSection();
     JPanelChooseSchedule chooseScheduleCard = new JPanelChooseSchedule();
+    JPanelRequiredChanges requiredChangesCard = new JPanelRequiredChanges();
     
     //Create the panel to contain the cards
     cardPanel = new JPanel(new CardLayout());
@@ -64,6 +65,7 @@ public class CSMS {
     cardPanel.add(addCourseCard, "ADD COURSE");
     cardPanel.add(newSectionCard, "NEW SECTION");
     cardPanel.add(chooseScheduleCard, "CHOOSE SCHEDULE");
+    cardPanel.add(requiredChangesCard, "REQUIRED CHANGES");
     
     //Add cards panel to pane
     pane.add(new JPanelHeader(), BorderLayout.PAGE_START);

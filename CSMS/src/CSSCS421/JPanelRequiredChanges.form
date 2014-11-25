@@ -36,10 +36,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelConflicts" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -47,13 +47,11 @@
                                   <Component id="jBtnBackSS" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jBtnManual" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jBtnAutomatic" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="327" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane2" alignment="0" pref="711" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" alignment="0" pref="711" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -67,12 +65,11 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabelConflicts" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="264" max="-2" attributes="0"/>
+                  <Component id="jScrollPane3" min="-2" pref="264" max="-2" attributes="0"/>
                   <EmptySpace pref="10" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jBtnBackSS" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jBtnManual" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jBtnAutomatic" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
@@ -85,7 +82,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="24" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Conflict Resolution"/>
+            <Property name="text" type="java.lang.String" value="Required Changes"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelConflicts">
@@ -93,32 +90,28 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="12" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="2 Conflicts Found"/>
+            <Property name="text" type="java.lang.String" value="The following changes will be made to resolve the schedule conflicts"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+        <Container class="javax.swing.JScrollPane" name="jScrollPane3">
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="2">
+                  <Table columnCount="4" rowCount="1">
                     <Column editable="true" title="Course" type="java.lang.String">
                       <Data value="CS216"/>
-                      <Data value="CS116"/>
                     </Column>
                     <Column editable="true" title="Section" type="java.lang.Integer">
-                      <Data value="1"/>
                       <Data value="1"/>
                     </Column>
                     <Column editable="true" title="Term" type="java.lang.String">
                       <Data value="WI/15"/>
-                      <Data value="WI/15"/>
                     </Column>
-                    <Column editable="true" title="Conflicts" type="java.lang.String">
-                      <Data value="CS116*1"/>
-                      <Data value="CS216*1"/>
+                    <Column editable="true" title="Changes" type="java.lang.String">
+                      <Data value="Room = SE115"/>
                     </Column>
                   </Table>
                 </Property>
@@ -166,21 +159,10 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Resolve Conflicts Manually"/>
+            <Property name="text" type="java.lang.String" value="Commit Changes"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnManualActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="jBtnAutomatic">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Trebuchet MS" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Resolve Conflicts Automatically"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnAutomaticActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
