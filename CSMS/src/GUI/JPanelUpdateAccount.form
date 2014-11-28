@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabelEditUA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jBtnLogoutUA" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelUsername2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUsername3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUsername4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUsername10" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUsername9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUsername8" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUsername7" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUsername6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUsername11" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Component id="jtxtFirstNameUA" min="-2" pref="105" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jtxtMidInitialUA" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="jtxtLastNameUA" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jtxtPasswordUA" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jtxtEmailUA" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jComBoxDeptUA" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jtxtMonikerUA" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jComBoxPositionUA" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jtxtConfirmPasswordUA" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="jBtnAddUserUA" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="jBtnCancelUA" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelEditUA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnLogoutUA" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtFirstNameUA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelUsername2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtMidInitialUA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelUsername3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtLastNameUA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelUsername4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jComBoxPositionUA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelUsername6" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtMonikerUA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelUsername7" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jComBoxDeptUA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelUsername8" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtEmailUA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelUsername9" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtPasswordUA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelUsername10" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabelUsername11" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtConfirmPasswordUA" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jBtnAddUserUA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnCancelUA" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabelUsername2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="First Name: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelUsername11">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Confirm Password:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtFirstNameUA">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtConfirmPasswordUA">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelUsername3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Middle Initial:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtMidInitialUA">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelUsername4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Last Name:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtLastNameUA">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelEditUA">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Edit User Account"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelUsername6">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Position:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComBoxPositionUA">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="6">
+            <StringItem index="0" value="Select Position"/>
+            <StringItem index="1" value="Associate Professor"/>
+            <StringItem index="2" value="Assistant Professor"/>
+            <StringItem index="3" value="Adjunct Faculty"/>
+            <StringItem index="4" value="Department Chair"/>
+            <StringItem index="5" value="Professor"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelUsername7">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Moniker:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtMonikerUA">
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnCancelUA">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelUsername8">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Department:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComBoxDeptUA">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="59">
+            <StringItem index="0" value="Select Dept."/>
+            <StringItem index="1" value="Accounting"/>
+            <StringItem index="2" value="Art"/>
+            <StringItem index="3" value="Biology"/>
+            <StringItem index="4" value="Black Studies"/>
+            <StringItem index="5" value="Col Business &amp; Management"/>
+            <StringItem index="6" value="Communication &amp; Digital Media"/>
+            <StringItem index="7" value="Chemistry"/>
+            <StringItem index="8" value="Computer Info Syst"/>
+            <StringItem index="9" value="Criminal Justice"/>
+            <StringItem index="10" value="Communication"/>
+            <StringItem index="11" value="Computer Science"/>
+            <StringItem index="12" value="Elec &amp; Computer Engr"/>
+            <StringItem index="13" value="Economics"/>
+            <StringItem index="14" value="Education Leadership"/>
+            <StringItem index="15" value="English Lang Program"/>
+            <StringItem index="16" value="English"/>
+            <StringItem index="17" value="Educational Tech &amp; Development"/>
+            <StringItem index="18" value="Engineering Tech Management"/>
+            <StringItem index="19" value="Finance"/>
+            <StringItem index="20" value="French"/>
+            <StringItem index="21" value="Geography"/>
+            <StringItem index="22" value="German"/>
+            <StringItem index="23" value="Gender Studies"/>
+            <StringItem index="24" value="History"/>
+            <StringItem index="25" value="Honors"/>
+            <StringItem index="26" value="Health Sciences"/>
+            <StringItem index="27" value="Japanese"/>
+            <StringItem index="28" value="Kinesiology"/>
+            <StringItem index="29" value="Latin"/>
+            <StringItem index="30" value="Law"/>
+            <StringItem index="31" value="Leadership and Service"/>
+            <StringItem index="32" value="Administrative Science"/>
+            <StringItem index="33" value="Mathematical Sciences"/>
+            <StringItem index="34" value="Mechanical Engr"/>
+            <StringItem index="35" value="Master of Energy &amp; Materials"/>
+            <StringItem index="36" value="Modern Foreign Lang"/>
+            <StringItem index="37" value="Management"/>
+            <StringItem index="38" value="Marketing"/>
+            <StringItem index="39" value="Medical Laboratory Science"/>
+            <StringItem index="40" value="Music Education"/>
+            <StringItem index="41" value="Music"/>
+            <StringItem index="42" value="Natural Science"/>
+            <StringItem index="43" value="Nursing"/>
+            <StringItem index="44" value="Occupational Therapy"/>
+            <StringItem index="45" value="Philosophy"/>
+            <StringItem index="46" value="Physics"/>
+            <StringItem index="47" value="Political Science"/>
+            <StringItem index="48" value="Psychology"/>
+            <StringItem index="49" value="Robert Fellows Seminar"/>
+            <StringItem index="50" value="Rhetoric &amp; Prof Writing"/>
+            <StringItem index="51" value="Sociology"/>
+            <StringItem index="52" value="Spanish"/>
+            <StringItem index="53" value="Social Work"/>
+            <StringItem index="54" value="Teaching Chinese As a Foreign"/>
+            <StringItem index="55" value="Teacher Education--Mis/Sec Sch"/>
+            <StringItem index="56" value="Teacher Education"/>
+            <StringItem index="57" value="Theater"/>
+            <StringItem index="58" value="Youth Services"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelUsername9">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="E-Mail:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtEmailUA">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelUsername10">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Password:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtPasswordUA">
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnAddUserUA">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Create User Account"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnAddUserUAActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnLogoutUA">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Logout"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
