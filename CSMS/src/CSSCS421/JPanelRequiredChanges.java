@@ -66,6 +66,11 @@ public class JPanelRequiredChanges extends javax.swing.JPanel {
 
     jBtnBackSS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnBackSS.setText("Back");
+    jBtnBackSS.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jBtnBackSSActionPerformed(evt);
+      }
+    });
 
     jBtnManual.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnManual.setText("Commit Changes");
@@ -126,6 +131,10 @@ public class JPanelRequiredChanges extends javax.swing.JPanel {
     JOptionPane.showMessageDialog(null, "All conflicts have been resolved!");
     CSMS.switchTo("HOME");
   }//GEN-LAST:event_jBtnManualActionPerformed
+
+  private void jBtnBackSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackSSActionPerformed
+    CSMS.switchTo("CONFLICTS");
+  }//GEN-LAST:event_jBtnBackSSActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

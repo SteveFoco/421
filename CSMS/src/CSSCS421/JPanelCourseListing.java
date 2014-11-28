@@ -71,6 +71,11 @@ public class JPanelCourseListing extends javax.swing.JPanel {
 
     jBtnBackCL.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnBackCL.setText("Back");
+    jBtnBackCL.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jBtnBackCLActionPerformed(evt);
+      }
+    });
 
     jBtnModifyCL.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnModifyCL.setText("Modify Selected Course");
@@ -89,7 +94,7 @@ public class JPanelCourseListing extends javax.swing.JPanel {
     });
 
     jLabelUsername.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-    jLabelUsername.setText("0 Courses Found");
+    jLabelUsername.setText("1 Course(s) Found");
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -146,6 +151,10 @@ public class JPanelCourseListing extends javax.swing.JPanel {
   private void jBtnAddCLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddCLActionPerformed
     CSMS.switchTo("NEW SECTION");
   }//GEN-LAST:event_jBtnAddCLActionPerformed
+
+  private void jBtnBackCLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackCLActionPerformed
+    CSMS.switchTo("COURSE SEARCH");
+  }//GEN-LAST:event_jBtnBackCLActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

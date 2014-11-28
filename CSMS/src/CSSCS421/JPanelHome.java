@@ -53,6 +53,11 @@ public class JPanelHome extends javax.swing.JPanel {
 
     jButton2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jButton2.setText("Add New Course");
+    jButton2.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton2ActionPerformed(evt);
+      }
+    });
 
     jButton3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jButton3.setText("Create New Schedule");
@@ -164,6 +169,10 @@ public class JPanelHome extends javax.swing.JPanel {
   private void jBtnDisplayConflictsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDisplayConflictsActionPerformed
     CSMS.switchTo("CHOOSE SCHEDULE");
   }//GEN-LAST:event_jBtnDisplayConflictsActionPerformed
+
+  private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    CSMS.switchTo("NEW SECTION");
+  }//GEN-LAST:event_jButton2ActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

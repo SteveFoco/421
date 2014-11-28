@@ -68,6 +68,11 @@ public class JPanelConflicts extends javax.swing.JPanel {
 
     jBtnBackSS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnBackSS.setText("Back");
+    jBtnBackSS.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jBtnBackSSActionPerformed(evt);
+      }
+    });
 
     jBtnManual.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnManual.setText("Resolve Conflicts Manually");
@@ -142,6 +147,10 @@ public class JPanelConflicts extends javax.swing.JPanel {
   private void jBtnAutomaticActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAutomaticActionPerformed
     CSMS.switchTo("REQUIRED CHANGES");
   }//GEN-LAST:event_jBtnAutomaticActionPerformed
+
+  private void jBtnBackSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackSSActionPerformed
+    CSMS.switchTo("CHOOSE SCHEDULE");
+  }//GEN-LAST:event_jBtnBackSSActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables

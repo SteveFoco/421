@@ -218,7 +218,7 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
   }//GEN-LAST:event_jBtnSearchCSActionPerformed
 
   private void jBtnBackCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackCSActionPerformed
-    // TODO add your handling code here:
+    CSMS.switchTo("HOME");
   }//GEN-LAST:event_jBtnBackCSActionPerformed
 
 
