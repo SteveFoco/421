@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package CSSCS421;
+package GUI;
 
 /**
  *
@@ -32,6 +32,7 @@ public class JPanelHeader extends javax.swing.JPanel {
     jLabel2 = new javax.swing.JLabel();
     jLabel4 = new javax.swing.JLabel();
     jBtnLogoutCS = new javax.swing.JButton();
+    jBtnHome = new javax.swing.JButton();
 
     setBackground(new java.awt.Color(0, 204, 255));
     setPreferredSize(new java.awt.Dimension(600, 100));
@@ -42,13 +43,21 @@ public class JPanelHeader extends javax.swing.JPanel {
     jLabel2.setFont(new java.awt.Font("Script MT Bold", 0, 28)); // NOI18N
     jLabel2.setText("Course scheduling made easy!");
 
-    jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CSSCS421/SVSU-logo2.gif"))); // NOI18N
+    jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/SVSU-logo2.gif"))); // NOI18N
 
     jBtnLogoutCS.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
     jBtnLogoutCS.setText("Logout");
     jBtnLogoutCS.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         jBtnLogoutCSActionPerformed(evt);
+      }
+    });
+
+    jBtnHome.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+    jBtnHome.setText("Home");
+    jBtnHome.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jBtnHomeActionPerformed(evt);
       }
     });
 
@@ -63,23 +72,30 @@ public class JPanelHeader extends javax.swing.JPanel {
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(layout.createSequentialGroup()
             .addGap(32, 32, 32)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jBtnLogoutCS))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addComponent(jLabel2))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addComponent(jBtnLogoutCS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(jBtnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         .addContainerGap())
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+      .addGroup(layout.createSequentialGroup()
+        .addContainerGap()
+        .addComponent(jBtnLogoutCS)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jBtnHome)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       .addGroup(layout.createSequentialGroup()
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addGroup(layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jBtnLogoutCS)))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jLabel2))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel2)))
+        .addGap(0, 8, Short.MAX_VALUE))
     );
   }// </editor-fold>//GEN-END:initComponents
 
@@ -87,8 +103,13 @@ public class JPanelHeader extends javax.swing.JPanel {
     CSMS.switchTo("LOGIN");
   }//GEN-LAST:event_jBtnLogoutCSActionPerformed
 
+  private void jBtnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnHomeActionPerformed
+    CSMS.switchTo("HOME");
+  }//GEN-LAST:event_jBtnHomeActionPerformed
+
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JButton jBtnHome;
   private javax.swing.JButton jBtnLogoutCS;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
