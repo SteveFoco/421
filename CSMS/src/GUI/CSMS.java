@@ -19,14 +19,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-/**
- *
- * @author steev_000
- */
 public class CSMS {
 
   //CardLayout cards;
   static JPanel cardPanel;
+  public static Controllers.DBMgr db = new Controllers.DBMgr();
+  public static Controllers.UsersController users = new Controllers.UsersController();
   
   public void addComponentToPane(Container pane) {
     
@@ -111,8 +109,7 @@ public class CSMS {
       }
     });
     
-    Controllers.DBMgr db = new Controllers.DBMgr();
-    db.getData();
+    
   }
   
   public CSMS() {        

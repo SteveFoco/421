@@ -11,7 +11,7 @@ public class DBMgr {
     try {
       Class.forName("com.mysql.jdbc.Driver");
       
-      conn = DriverManager.getConnection("jdbc:mysql://192.168.1.8:3306/csms","root","");
+      conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/csms","root","");
       st = conn.createStatement();
       
     } catch(Exception ex) {
@@ -34,6 +34,24 @@ public class DBMgr {
     } catch (Exception ex) {
       System.out.println(ex);
     }
+  }
+  
+  public String getPassword(String user) {
+    try {
+      String query = "SELECT password FROM users WHERE username = '" + user + "'";
+      rs = st.executeQuery(query);
+      rs.next();
+      String password = rs.getString("password");
+      
+      System.out.println("Password: " + password);
+      
+      return password;
+      
+    } catch (Exception ex) {
+      System.out.println(ex);
+    }
+    
+    return null;
   }
 
 }
