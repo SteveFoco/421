@@ -5,16 +5,9 @@
  */
 
 package GUI;
-
-/**
- *
- * @author Steve
- */
+  
 public class JPanelCourseListing extends javax.swing.JPanel {
-
-    /**
-     * Creates new form JPanelCourseListing
-     */
+  
     public JPanelCourseListing() {
         initComponents();
     }
@@ -31,7 +24,7 @@ public class JPanelCourseListing extends javax.swing.JPanel {
     jPanel1 = new javax.swing.JPanel();
     jLabel3 = new javax.swing.JLabel();
     jScrollPane1 = new javax.swing.JScrollPane();
-    jTableCourseListing = new javax.swing.JTable();
+    jTblResults = new javax.swing.JTable();
     jBtnBackCL = new javax.swing.JButton();
     jBtnModifyCL = new javax.swing.JButton();
     jBtnAddCL = new javax.swing.JButton();
@@ -42,32 +35,10 @@ public class JPanelCourseListing extends javax.swing.JPanel {
     jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
     jLabel3.setText("Course Listing Results");
 
-    jTableCourseListing.setAutoCreateRowSorter(true);
-    jTableCourseListing.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-    jTableCourseListing.setModel(new javax.swing.table.DefaultTableModel(
-      new Object [][] {
-        {"CS471", "Senior CS Capstone",  new Integer(732), "I. Cho", "MW", "12:30-2:20", "SE117", "8"}
-      },
-      new String [] {
-        "Course #", "Name", "Line No.", "Professor", "Days", "Time", "Room", "Students"
-      }
-    ) {
-      Class[] types = new Class [] {
-        java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-      };
-      boolean[] canEdit = new boolean [] {
-        false, false, false, false, false, false, false, false
-      };
-
-      public Class getColumnClass(int columnIndex) {
-        return types [columnIndex];
-      }
-
-      public boolean isCellEditable(int rowIndex, int columnIndex) {
-        return canEdit [columnIndex];
-      }
-    });
-    jScrollPane1.setViewportView(jTableCourseListing);
+    jTblResults.setAutoCreateRowSorter(true);
+    jTblResults.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+    jTblResults.setModel(CSMS.db.getCourseSections());
+    jScrollPane1.setViewportView(jTblResults);
 
     jBtnBackCL.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnBackCL.setText("Back");
@@ -165,6 +136,6 @@ public class JPanelCourseListing extends javax.swing.JPanel {
   private javax.swing.JLabel jLabelUsername;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable jTableCourseListing;
+  private javax.swing.JTable jTblResults;
   // End of variables declaration//GEN-END:variables
 }

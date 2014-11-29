@@ -32,19 +32,19 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabelUsername1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComBoxLevelCS" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jCmbLevel" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jtxtNumberCS" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jtxtNumber" min="-2" pref="105" max="-2" attributes="0"/>
                           <Component id="jLabelPassword1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jtxtLineNumberCS2" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="jtxtLineNumber" min="-2" pref="105" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jComBoxDaysCS" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jCmbDays" min="-2" pref="105" max="-2" attributes="0"/>
                           <Component id="jLabelPassword2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -56,7 +56,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jComBoxDeptSearchCS" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="jCmbDept" min="-2" pref="220" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Component id="jBtnBackCS" min="-2" pref="200" max="-2" attributes="0"/>
@@ -65,9 +65,9 @@
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabelUsername3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComBoxSemesterCS" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="jComBoxInstructorCS" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="jComBoxCreditsCS" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="jCmbSemester" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="jCmbInstructor" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="jCmbCredits" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                           <Component id="jLabelPassword3" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jBtnSearchCS" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
@@ -89,8 +89,8 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jComBoxDeptSearchCS" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComBoxSemesterCS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCmbDept" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCmbSemester" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -100,9 +100,9 @@
               </Group>
               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jComBoxLevelCS" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtxtNumberCS" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComBoxInstructorCS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCmbLevel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCmbInstructor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -112,9 +112,9 @@
               </Group>
               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jtxtLineNumberCS2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComBoxDaysCS" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComBoxCreditsCS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtLineNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCmbDays" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCmbCredits" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="45" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -175,7 +175,7 @@
         <Property name="text" type="java.lang.String" value="Instructor:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComBoxDeptSearchCS">
+    <Component class="javax.swing.JComboBox" name="jCmbDept">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="0"/>
@@ -245,7 +245,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComBoxInstructorCS">
+    <Component class="javax.swing.JComboBox" name="jCmbInstructor">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="0"/>
@@ -267,7 +267,7 @@
         <Property name="text" type="java.lang.String" value="Department:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComBoxCreditsCS">
+    <Component class="javax.swing.JComboBox" name="jCmbCredits">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="0"/>
@@ -284,7 +284,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComBoxSemesterCS">
+    <Component class="javax.swing.JComboBox" name="jCmbSemester">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="0"/>
@@ -302,14 +302,14 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtxtLineNumberCS2">
+    <Component class="javax.swing.JTextField" name="jtxtLineNumber">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComBoxLevelCS">
+    <Component class="javax.swing.JComboBox" name="jCmbLevel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="0"/>
@@ -327,7 +327,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComBoxDaysCS">
+    <Component class="javax.swing.JComboBox" name="jCmbDays">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="0"/>
@@ -348,7 +348,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComBoxDaysCSActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCmbDaysActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelPassword">
@@ -359,7 +359,7 @@
         <Property name="text" type="java.lang.String" value="Semester:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtxtNumberCS">
+    <Component class="javax.swing.JTextField" name="jtxtNumber">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="0"/>

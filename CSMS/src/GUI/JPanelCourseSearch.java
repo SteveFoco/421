@@ -34,16 +34,16 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
     jLabelPassword3 = new javax.swing.JLabel();
     jLabel3 = new javax.swing.JLabel();
     jLabelUsername3 = new javax.swing.JLabel();
-    jComBoxDeptSearchCS = new javax.swing.JComboBox();
-    jComBoxInstructorCS = new javax.swing.JComboBox();
+    jCmbDept = new javax.swing.JComboBox();
+    jCmbInstructor = new javax.swing.JComboBox();
     jLabelUsername = new javax.swing.JLabel();
-    jComBoxCreditsCS = new javax.swing.JComboBox();
-    jComBoxSemesterCS = new javax.swing.JComboBox();
-    jtxtLineNumberCS2 = new javax.swing.JTextField();
-    jComBoxLevelCS = new javax.swing.JComboBox();
-    jComBoxDaysCS = new javax.swing.JComboBox();
+    jCmbCredits = new javax.swing.JComboBox();
+    jCmbSemester = new javax.swing.JComboBox();
+    jtxtLineNumber = new javax.swing.JTextField();
+    jCmbLevel = new javax.swing.JComboBox();
+    jCmbDays = new javax.swing.JComboBox();
     jLabelPassword = new javax.swing.JLabel();
-    jtxtNumberCS = new javax.swing.JTextField();
+    jtxtNumber = new javax.swing.JTextField();
     jBtnSearchCS = new javax.swing.JButton();
     jLabelPassword2 = new javax.swing.JLabel();
     jBtnBackCS = new javax.swing.JButton();
@@ -68,38 +68,38 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
     jLabelUsername3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jLabelUsername3.setText("Instructor:");
 
-    jComBoxDeptSearchCS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jComBoxDeptSearchCS.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Dept.", "Accounting", "Art", "Biology", "Black Studies", "Col Business & Management", "Communication & Digital Media", "Chemistry", "Computer Info Syst", "Criminal Justice", "Communication", "Computer Science", "Elec & Computer Engr", "Economics", "Education Leadership", "English Lang Program", "English", "Educational Tech & Development", "Engineering Tech Management", "Finance", "French", "Geography", "German", "Gender Studies", "History", "Honors", "Health Sciences", "Japanese", "Kinesiology", "Latin", "Law", "Leadership and Service", "Administrative Science", "Mathematical Sciences", "Mechanical Engr", "Master of Energy & Materials", "Modern Foreign Lang", "Management", "Marketing", "Medical Laboratory Science", "Music Education", "Music", "Natural Science", "Nursing", "Occupational Therapy", "Philosophy", "Physics", "Political Science", "Psychology", "Robert Fellows Seminar", "Rhetoric & Prof Writing", "Sociology", "Spanish", "Social Work", "Teaching Chinese As a Foreign", "Teacher Education--Mis/Sec Sch", "Teacher Education", "Theater", "Youth Services" }));
+    jCmbDept.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbDept.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Dept.", "Accounting", "Art", "Biology", "Black Studies", "Col Business & Management", "Communication & Digital Media", "Chemistry", "Computer Info Syst", "Criminal Justice", "Communication", "Computer Science", "Elec & Computer Engr", "Economics", "Education Leadership", "English Lang Program", "English", "Educational Tech & Development", "Engineering Tech Management", "Finance", "French", "Geography", "German", "Gender Studies", "History", "Honors", "Health Sciences", "Japanese", "Kinesiology", "Latin", "Law", "Leadership and Service", "Administrative Science", "Mathematical Sciences", "Mechanical Engr", "Master of Energy & Materials", "Modern Foreign Lang", "Management", "Marketing", "Medical Laboratory Science", "Music Education", "Music", "Natural Science", "Nursing", "Occupational Therapy", "Philosophy", "Physics", "Political Science", "Psychology", "Robert Fellows Seminar", "Rhetoric & Prof Writing", "Sociology", "Spanish", "Social Work", "Teaching Chinese As a Foreign", "Teacher Education--Mis/Sec Sch", "Teacher Education", "Theater", "Youth Services" }));
 
-    jComBoxInstructorCS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jComBoxInstructorCS.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Instructor", "Cho, I", "James, Scott" }));
+    jCmbInstructor.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbInstructor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Instructor", "Cho, I", "James, Scott" }));
 
     jLabelUsername.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jLabelUsername.setText("Department:");
 
-    jComBoxCreditsCS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jComBoxCreditsCS.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Credits", "1", "2", "3", "4", "5" }));
+    jCmbCredits.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbCredits.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Credits", "1", "2", "3", "4", "5" }));
 
-    jComBoxSemesterCS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jComBoxSemesterCS.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Sem.", "Fall 14", "Winter 15", "Spring 15", "Summer 15", "Fall 15", "Winter 16" }));
+    jCmbSemester.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbSemester.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Sem.", "Fall 14", "Winter 15", "Spring 15", "Summer 15", "Fall 15", "Winter 16" }));
 
-    jtxtLineNumberCS2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jtxtLineNumber.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
-    jComBoxLevelCS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jComBoxLevelCS.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Level", "100", "200", "300", "400", "500", "600" }));
+    jCmbLevel.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbLevel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Level", "100", "200", "300", "400", "500", "600" }));
 
-    jComBoxDaysCS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jComBoxDaysCS.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Days", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Mon Wed", "Tues Thurs", "Mon Wed Fri" }));
-    jComBoxDaysCS.addActionListener(new java.awt.event.ActionListener() {
+    jCmbDays.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbDays.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Days", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Mon Wed", "Tues Thurs", "Mon Wed Fri" }));
+    jCmbDays.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jComBoxDaysCSActionPerformed(evt);
+        jCmbDaysActionPerformed(evt);
       }
     });
 
     jLabelPassword.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jLabelPassword.setText("Semester:");
 
-    jtxtNumberCS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jtxtNumber.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
     jBtnSearchCS.setBackground(new java.awt.Color(0, 204, 255));
     jBtnSearchCS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -136,16 +136,16 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
           .addGroup(layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(jLabelUsername1)
-              .addComponent(jComBoxLevelCS, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(jCmbLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(37, 37, 37)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jtxtNumberCS, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jtxtNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jLabelPassword1)))
           .addGroup(layout.createSequentialGroup()
-            .addComponent(jtxtLineNumberCS2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jtxtLineNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(37, 37, 37)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jComBoxDaysCS, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jCmbDays, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jLabelPassword2)))
           .addComponent(jLabelUsername2)
           .addGroup(layout.createSequentialGroup()
@@ -154,16 +154,16 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
             .addComponent(jLabelPassword))
           .addGroup(layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jComBoxDeptSearchCS, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jCmbDept, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jBtnBackCS, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(58, 58, 58)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(jLabelUsername3)
-              .addComponent(jComBoxSemesterCS, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jComBoxInstructorCS, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jComBoxCreditsCS, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jCmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jCmbInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jCmbCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jLabelPassword3)
               .addComponent(jBtnSearchCS, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -179,8 +179,8 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
           .addComponent(jLabelPassword))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jComBoxDeptSearchCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jComBoxSemesterCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jCmbDept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jCmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(40, 40, 40)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabelUsername1)
@@ -188,9 +188,9 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
           .addComponent(jLabelUsername3))
         .addGap(2, 2, 2)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jComBoxLevelCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jtxtNumberCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jComBoxInstructorCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jCmbLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jtxtNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jCmbInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(40, 40, 40)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabelUsername2)
@@ -198,9 +198,9 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
           .addComponent(jLabelPassword3))
         .addGap(4, 4, 4)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jtxtLineNumberCS2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jComBoxDaysCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jComBoxCreditsCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jtxtLineNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jCmbDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jCmbCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jBtnSearchCS)
@@ -209,11 +209,16 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
     );
   }// </editor-fold>//GEN-END:initComponents
 
-  private void jComBoxDaysCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComBoxDaysCSActionPerformed
+  private void jCmbDaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmbDaysActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_jComBoxDaysCSActionPerformed
+  }//GEN-LAST:event_jCmbDaysActionPerformed
 
   private void jBtnSearchCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSearchCSActionPerformed
+    
+    
+    
+    
+    
     CSMS.switchTo("COURSE LISTING");
   }//GEN-LAST:event_jBtnSearchCSActionPerformed
 
@@ -225,12 +230,12 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton jBtnBackCS;
   private javax.swing.JButton jBtnSearchCS;
-  private javax.swing.JComboBox jComBoxCreditsCS;
-  private javax.swing.JComboBox jComBoxDaysCS;
-  private javax.swing.JComboBox jComBoxDeptSearchCS;
-  private javax.swing.JComboBox jComBoxInstructorCS;
-  private javax.swing.JComboBox jComBoxLevelCS;
-  private javax.swing.JComboBox jComBoxSemesterCS;
+  private javax.swing.JComboBox jCmbCredits;
+  private javax.swing.JComboBox jCmbDays;
+  private javax.swing.JComboBox jCmbDept;
+  private javax.swing.JComboBox jCmbInstructor;
+  private javax.swing.JComboBox jCmbLevel;
+  private javax.swing.JComboBox jCmbSemester;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabelPassword;
   private javax.swing.JLabel jLabelPassword1;
@@ -240,7 +245,7 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
   private javax.swing.JLabel jLabelUsername1;
   private javax.swing.JLabel jLabelUsername2;
   private javax.swing.JLabel jLabelUsername3;
-  private javax.swing.JTextField jtxtLineNumberCS2;
-  private javax.swing.JTextField jtxtNumberCS;
+  private javax.swing.JTextField jtxtLineNumber;
+  private javax.swing.JTextField jtxtNumber;
   // End of variables declaration//GEN-END:variables
 }
