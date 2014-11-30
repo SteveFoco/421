@@ -193,7 +193,7 @@ public class DBMgr {
     
     try
     {
-      pst = conn.prepareStatement(insert);
+      pst = conn.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
       
       pst.setString(1, section.course_number);
       pst.setInt(2, section.section_number);
@@ -206,8 +206,40 @@ public class DBMgr {
       pst.setString(9, section.type);
       pst.setDate(10, section.first_date);
       pst.setDate(11, section.last_date);
-      
-      result = pst.executeQuery();
+
+      pst.execute();
+      result = pst.getGeneratedKeys();
+    }
+    catch (SQLException ex)
+    {
+      System.out.println(ex);
+    }
+    
+    return result;
+  }
+  
+    public ResultSet saveMeetingDay(MeetingDay meeting_day) {
+    ResultSet result = null;
+    
+    String insert = "INSERT INTO meeting_days (" +
+                    "course_section_id," +
+                    "room_number," +
+                    "day," +
+                    "start_time," +
+                    "end_time" +
+                    ")" +
+                    "VALUES (?, ?, ?, ?, ?)";
+    
+    try
+    {
+      pst = conn.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
+      pst.setInt(1, meeting_day.course_section_id);
+      pst.setString(2, meeting_day.room_number);
+      pst.setString(3, meeting_day.day);
+      pst.setTime(4, meeting_day.start_time);
+      pst.setTime(5, meeting_day.end_time);
+      pst.execute();
+      result = pst.getGeneratedKeys();
     }
     catch (SQLException ex)
     {
