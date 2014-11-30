@@ -172,11 +172,11 @@ public class DBMgr {
     
     return result;
   }
-  
-  public boolean saveCourseSection(CourseSection section) {
-    boolean result = false;
     
-    String insert = "INSERT INTO course_sections (" +
+  public ResultSet saveCourseSection(CourseSection section) {
+    ResultSet result = null;
+    
+    String insert = "INSERT INTO course_sections VALUES(" +
                     "course_number," +
                     "section_number," +
                     "available," +
@@ -194,6 +194,7 @@ public class DBMgr {
     try
     {
       pst = conn.prepareStatement(insert);
+      
       pst.setString(1, section.course_number);
       pst.setInt(2, section.section_number);
       pst.setInt(3, section.available ? 1 : 0);
@@ -205,7 +206,8 @@ public class DBMgr {
       pst.setString(9, section.type);
       pst.setDate(10, section.first_date);
       pst.setDate(11, section.last_date);
-      result = pst.execute();
+      
+      result = pst.executeQuery();
     }
     catch (SQLException ex)
     {
