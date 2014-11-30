@@ -19,7 +19,8 @@ public class JPanelCourseListing extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-  private void initComponents() {
+  private void initComponents()
+  {
 
     jPanel1 = new javax.swing.JPanel();
     jLabel3 = new javax.swing.JLabel();
@@ -42,24 +43,30 @@ public class JPanelCourseListing extends javax.swing.JPanel {
 
     jBtnBackCL.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnBackCL.setText("Back");
-    jBtnBackCL.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
+    jBtnBackCL.addActionListener(new java.awt.event.ActionListener()
+    {
+      public void actionPerformed(java.awt.event.ActionEvent evt)
+      {
         jBtnBackCLActionPerformed(evt);
       }
     });
 
     jBtnModifyCL.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnModifyCL.setText("Modify Selected Course");
-    jBtnModifyCL.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
+    jBtnModifyCL.addActionListener(new java.awt.event.ActionListener()
+    {
+      public void actionPerformed(java.awt.event.ActionEvent evt)
+      {
         jBtnModifyCLActionPerformed(evt);
       }
     });
 
     jBtnAddCL.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnAddCL.setText("Add New Course");
-    jBtnAddCL.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
+    jBtnAddCL.addActionListener(new java.awt.event.ActionListener()
+    {
+      public void actionPerformed(java.awt.event.ActionEvent evt)
+      {
         jBtnAddCLActionPerformed(evt);
       }
     });
@@ -136,6 +143,6 @@ public class JPanelCourseListing extends javax.swing.JPanel {
   private javax.swing.JLabel jLabelUsername;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTable jTblResults;
+  public javax.swing.JTable jTblResults;
   // End of variables declaration//GEN-END:variables
 }

@@ -23,23 +23,6 @@ public class DBMgr {
     }
   }
   
-  public void getData() {
-    try {
-      String query = "select * from professors";
-      rs = st.executeQuery(query);
-      System.out.println("Records from Database");
-      
-      while(rs.next()) {
-        String id = rs.getString("id");
-        String firstName = rs.getString("first_name");
-        
-        System.out.println("ID: " + id + " Name: " + firstName);
-      }
-    } catch (Exception ex) {
-      System.out.println(ex);
-    }
-  }
-  
   public String getPassword(String user) {
     try {
       String query = "SELECT password FROM users WHERE username = '" + user + "'";
@@ -145,7 +128,7 @@ public class DBMgr {
                     "term LIKE ? AND" +
                     "student_count = ? AND" +
                     "type LIKE ? AND" +
-                    "first_date = ? AND" +
+                    "start_date = ? AND" +
                     "last_date = ?" +
                     ")";
     
@@ -161,7 +144,7 @@ public class DBMgr {
       pst.setString(7, "%"+section.term+"%");
       pst.setInt(8, section.student_count);
       pst.setString(9, "%"+section.type+"%");
-      pst.setDate(10, section.first_date);
+      pst.setDate(10, section.start_date);
       pst.setDate(11, section.last_date);
       result = pst.executeQuery();
     }
@@ -176,7 +159,7 @@ public class DBMgr {
   public ResultSet saveCourseSection(CourseSection section) {
     ResultSet result = null;
     
-    String insert = "INSERT INTO course_sections VALUES(" +
+    String insert = "INSERT INTO course_sections (" +
                     "course_number," +
                     "section_number," +
                     "available," +
@@ -186,7 +169,7 @@ public class DBMgr {
                     "term," +
                     "student_count," +
                     "type," +
-                    "first_date," +
+                    "start_date," +
                     "last_date" +
                     ")" +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -204,7 +187,7 @@ public class DBMgr {
       pst.setString(7, section.term);
       pst.setInt(8, section.student_count);
       pst.setString(9, section.type);
-      pst.setDate(10, section.first_date);
+      pst.setDate(10, section.start_date);
       pst.setDate(11, section.last_date);
 
       pst.execute();

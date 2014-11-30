@@ -6,9 +6,15 @@
 
 package GUI;
 
-import javax.swing.JOptionPane;
+import java.awt.*;
+import javax.swing.*;
 import BusinessObjects.CourseSection;
 import BusinessObjects.MeetingDay;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  *
@@ -44,21 +50,24 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jtxtCourseNumber = new javax.swing.JTextField();
     jtxtCourseName = new javax.swing.JTextField();
     jtxtSectionNumber = new javax.swing.JTextField();
-    jLabelPassword6 = new javax.swing.JLabel();
-    jLabelPassword7 = new javax.swing.JLabel();
-    jLabelPassword8 = new javax.swing.JLabel();
     jLabelPassword9 = new javax.swing.JLabel();
     jtxtCapacity = new javax.swing.JTextField();
-    jCmbDay1 = new javax.swing.JComboBox();
     jCmbInstructor = new javax.swing.JComboBox();
-    jCmbRoom1 = new javax.swing.JComboBox();
-    jCmbStartTime1 = new javax.swing.JComboBox();
     jCmbDept = new javax.swing.JComboBox();
-    jCmbEndTime1 = new javax.swing.JComboBox();
-    jLabelPassword11 = new javax.swing.JLabel();
     jCmbTerm = new javax.swing.JComboBox();
     jLabelPassword12 = new javax.swing.JLabel();
     jLabelPassword3 = new javax.swing.JLabel();
+    jLabelPassword10 = new javax.swing.JLabel();
+    jCmbType = new javax.swing.JComboBox();
+    jLabelPassword13 = new javax.swing.JLabel();
+    jFmtEndDate = new javax.swing.JFormattedTextField();
+    jLabelPassword14 = new javax.swing.JLabel();
+    jFmtStartDate = new javax.swing.JFormattedTextField();
+    jPnlTimes = new javax.swing.JPanel();
+    jCmbStartTime1 = new javax.swing.JComboBox();
+    jCmbEndTime1 = new javax.swing.JComboBox();
+    jCmbRoom1 = new javax.swing.JComboBox();
+    jCmbDay1 = new javax.swing.JComboBox();
     jCmbStartTime2 = new javax.swing.JComboBox();
     jCmbEndTime2 = new javax.swing.JComboBox();
     jCmbRoom2 = new javax.swing.JComboBox();
@@ -75,8 +84,10 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jCmbEndTime5 = new javax.swing.JComboBox();
     jCmbRoom5 = new javax.swing.JComboBox();
     jCmbDay5 = new javax.swing.JComboBox();
-    jLabelPassword10 = new javax.swing.JLabel();
-    jCmbType = new javax.swing.JComboBox();
+    jLabelPassword7 = new javax.swing.JLabel();
+    jLabelPassword11 = new javax.swing.JLabel();
+    jLabelPassword6 = new javax.swing.JLabel();
+    jLabelPassword8 = new javax.swing.JLabel();
 
     jBtnSubmitMod.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnSubmitMod.setText("Submit Course");
@@ -119,35 +130,43 @@ public class JPanelNewSection extends javax.swing.JPanel {
 
     jtxtSectionNumber.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
-    jLabelPassword6.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jLabelPassword6.setText("Day:");
-
-    jLabelPassword7.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jLabelPassword7.setText("Start Time:");
-
-    jLabelPassword8.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jLabelPassword8.setText("Room:");
-
     jLabelPassword9.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jLabelPassword9.setText("Capacity:");
 
     jtxtCapacity.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
-    jCmbDay1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jCmbDay1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Days", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Mon Wed", "Tues Thurs", "Mon Wed Fri" }));
-    jCmbDay1.addActionListener(new java.awt.event.ActionListener()
-    {
-      public void actionPerformed(java.awt.event.ActionEvent evt)
-      {
-        jCmbDay1ActionPerformed(evt);
-      }
-    });
-
     jCmbInstructor.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbInstructor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Instructor", "Cho, I", "James, Scott" }));
 
-    jCmbRoom1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jCmbRoom1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SE 117" }));
+    jCmbDept.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbDept.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Dept.", "Accounting", "Art", "Biology", "Black Studies", "Col Business & Management", "Communication & Digital Media", "Chemistry", "Computer Info Syst", "Criminal Justice", "Communication", "Computer Science", "Elec & Computer Engr", "Economics", "Education Leadership", "English Lang Program", "English", "Educational Tech & Development", "Engineering Tech Management", "Finance", "French", "Geography", "German", "Gender Studies", "History", "Honors", "Health Sciences", "Japanese", "Kinesiology", "Latin", "Law", "Leadership and Service", "Administrative Science", "Mathematical Sciences", "Mechanical Engr", "Master of Energy & Materials", "Modern Foreign Lang", "Management", "Marketing", "Medical Laboratory Science", "Music Education", "Music", "Natural Science", "Nursing", "Occupational Therapy", "Philosophy", "Physics", "Political Science", "Psychology", "Robert Fellows Seminar", "Rhetoric & Prof Writing", "Sociology", "Spanish", "Social Work", "Teaching Chinese As a Foreign", "Teacher Education--Mis/Sec Sch", "Teacher Education", "Theater", "Youth Services" }));
+
+    jCmbTerm.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbTerm.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Term", "FA14", "WI15" }));
+
+    jLabelPassword12.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jLabelPassword12.setText("Term:");
+
+    jLabelPassword3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jLabelPassword3.setText("Instructor:");
+
+    jLabelPassword10.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jLabelPassword10.setText("Type");
+
+    jCmbType.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Type", "LEC", "HYB", "ONL" }));
+    jCmbType.setSelectedIndex(0);
+    jCmbType.setSelectedItem(jCmbType);
+
+    jLabelPassword13.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jLabelPassword13.setText("End Date:");
+
+    jFmtEndDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+
+    jLabelPassword14.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jLabelPassword14.setText("Start Date:");
+
+    jFmtStartDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
 
     jCmbStartTime1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbStartTime1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12:30" }));
@@ -159,23 +178,21 @@ public class JPanelNewSection extends javax.swing.JPanel {
       }
     });
 
-    jCmbDept.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jCmbDept.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Dept.", "Accounting", "Art", "Biology", "Black Studies", "Col Business & Management", "Communication & Digital Media", "Chemistry", "Computer Info Syst", "Criminal Justice", "Communication", "Computer Science", "Elec & Computer Engr", "Economics", "Education Leadership", "English Lang Program", "English", "Educational Tech & Development", "Engineering Tech Management", "Finance", "French", "Geography", "German", "Gender Studies", "History", "Honors", "Health Sciences", "Japanese", "Kinesiology", "Latin", "Law", "Leadership and Service", "Administrative Science", "Mathematical Sciences", "Mechanical Engr", "Master of Energy & Materials", "Modern Foreign Lang", "Management", "Marketing", "Medical Laboratory Science", "Music Education", "Music", "Natural Science", "Nursing", "Occupational Therapy", "Philosophy", "Physics", "Political Science", "Psychology", "Robert Fellows Seminar", "Rhetoric & Prof Writing", "Sociology", "Spanish", "Social Work", "Teaching Chinese As a Foreign", "Teacher Education--Mis/Sec Sch", "Teacher Education", "Theater", "Youth Services" }));
-
     jCmbEndTime1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbEndTime1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2:20" }));
 
-    jLabelPassword11.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jLabelPassword11.setText("End Time:");
+    jCmbRoom1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbRoom1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SE 117" }));
 
-    jCmbTerm.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jCmbTerm.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Term", "Fall 2014", "Winter 2015", "Spring 2015", "Summer 2015", "Fall 2015", "Winter 2016" }));
-
-    jLabelPassword12.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jLabelPassword12.setText("Term:");
-
-    jLabelPassword3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jLabelPassword3.setText("Instructor:");
+    jCmbDay1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbDay1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Days", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Mon Wed", "Tues Thurs", "Mon Wed Fri" }));
+    jCmbDay1.addActionListener(new java.awt.event.ActionListener()
+    {
+      public void actionPerformed(java.awt.event.ActionEvent evt)
+      {
+        jCmbDay1ActionPerformed(evt);
+      }
+    });
 
     jCmbStartTime2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbStartTime2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12:30" }));
@@ -253,13 +270,142 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jCmbDay5.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbDay5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Days", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Mon Wed", "Tues Thurs", "Mon Wed Fri" }));
 
-    jLabelPassword10.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jLabelPassword10.setText("Type");
+    jLabelPassword7.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jLabelPassword7.setText("Start Time:");
 
-    jCmbType.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jCmbType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Type", "LEC", "HYB", "ONL" }));
-    jCmbType.setSelectedIndex(0);
-    jCmbType.setSelectedItem(jCmbType);
+    jLabelPassword11.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jLabelPassword11.setText("End Time:");
+
+    jLabelPassword6.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jLabelPassword6.setText("Day:");
+
+    jLabelPassword8.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jLabelPassword8.setText("Room:");
+
+    javax.swing.GroupLayout jPnlTimesLayout = new javax.swing.GroupLayout(jPnlTimes);
+    jPnlTimes.setLayout(jPnlTimesLayout);
+    jPnlTimesLayout.setHorizontalGroup(
+      jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPnlTimesLayout.createSequentialGroup()
+        .addContainerGap()
+        .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPnlTimesLayout.createSequentialGroup()
+            .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPnlTimesLayout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabelPassword8)
+                  .addComponent(jCmbRoom1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+              .addGroup(jPnlTimesLayout.createSequentialGroup()
+                .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabelPassword7)
+                  .addComponent(jCmbStartTime1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabelPassword11)
+                  .addComponent(jCmbEndTime1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGap(18, 18, 18)
+            .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(jCmbDay1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jLabelPassword6)))
+          .addGroup(jPnlTimesLayout.createSequentialGroup()
+            .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPnlTimesLayout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jCmbRoom2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(jPnlTimesLayout.createSequentialGroup()
+                .addComponent(jCmbStartTime2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jCmbEndTime2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(18, 18, 18)
+            .addComponent(jCmbDay2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(jPnlTimesLayout.createSequentialGroup()
+            .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPnlTimesLayout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jCmbRoom3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(jPnlTimesLayout.createSequentialGroup()
+                .addComponent(jCmbStartTime3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jCmbEndTime3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(18, 18, 18)
+            .addComponent(jCmbDay3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(jPnlTimesLayout.createSequentialGroup()
+            .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPnlTimesLayout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jCmbRoom4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(jPnlTimesLayout.createSequentialGroup()
+                .addComponent(jCmbStartTime4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jCmbEndTime4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(18, 18, 18)
+            .addComponent(jCmbDay4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(jPnlTimesLayout.createSequentialGroup()
+            .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPnlTimesLayout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jCmbRoom5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(jPnlTimesLayout.createSequentialGroup()
+                .addComponent(jCmbStartTime5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jCmbEndTime5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(18, 18, 18)
+            .addComponent(jCmbDay5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addContainerGap())
+    );
+    jPnlTimesLayout.setVerticalGroup(
+      jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPnlTimesLayout.createSequentialGroup()
+        .addContainerGap()
+        .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPnlTimesLayout.createSequentialGroup()
+              .addComponent(jLabelPassword7)
+              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+              .addComponent(jCmbStartTime1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPnlTimesLayout.createSequentialGroup()
+              .addComponent(jLabelPassword11)
+              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+              .addComponent(jCmbEndTime1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPnlTimesLayout.createSequentialGroup()
+              .addComponent(jLabelPassword8)
+              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+              .addComponent(jCmbRoom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnlTimesLayout.createSequentialGroup()
+            .addComponent(jLabelPassword6)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jCmbDay1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jCmbStartTime2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jCmbEndTime2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jCmbRoom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jCmbDay2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jCmbStartTime3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jCmbEndTime3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jCmbRoom3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jCmbDay3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jCmbStartTime4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jCmbEndTime4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jCmbRoom4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jCmbDay4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGroup(jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnlTimesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jCmbStartTime5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jCmbEndTime5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jCmbRoom5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jCmbDay5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addContainerGap())
+    );
 
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
@@ -268,13 +414,22 @@ public class JPanelNewSection extends javax.swing.JPanel {
       .addGroup(jPanel2Layout.createSequentialGroup()
         .addContainerGap()
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel2Layout.createSequentialGroup()
+            .addComponent(jPnlTimes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(58, 58, 58)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(jLabelPassword14)
+              .addComponent(jFmtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jLabelPassword13)
+              .addComponent(jFmtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(106, 106, 106))
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
               .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabelUsername)
                   .addComponent(jCmbDept, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabelPassword)
                   .addComponent(jtxtCourseNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -307,7 +462,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(jLabelPassword10, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                    .addComponent(jLabelPassword10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(144, 144, 144))
                   .addGroup(jPanel2Layout.createSequentialGroup()
                     .addComponent(jCmbType, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -318,70 +473,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
               .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jBtnSubmitMod)
                 .addGap(18, 18, 18)
-                .addComponent(jBtnBackMod))
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(271, 271, 271)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(jLabelPassword8)
-                      .addComponent(jCmbRoom1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(jLabelPassword7)
-                      .addComponent(jCmbStartTime1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(jLabelPassword11)
-                      .addComponent(jCmbEndTime1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(jCmbDay1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(jLabelPassword6)))
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(271, 271, 271)
-                    .addComponent(jCmbRoom2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(jCmbStartTime2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jCmbEndTime2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jCmbDay2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(271, 271, 271)
-                    .addComponent(jCmbRoom3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(jCmbStartTime3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jCmbEndTime3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jCmbDay3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(271, 271, 271)
-                    .addComponent(jCmbRoom4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(jCmbStartTime4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jCmbEndTime4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jCmbDay4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(271, 271, 271)
-                    .addComponent(jCmbRoom5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(jCmbStartTime5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jCmbEndTime5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jCmbDay5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jBtnBackMod)))
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
     );
     jPanel2Layout.setVerticalGroup(
@@ -430,51 +522,15 @@ public class JPanelNewSection extends javax.swing.JPanel {
                     .addComponent(jCmbType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
         .addGap(18, 18, 18)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-              .addComponent(jLabelPassword7)
-              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-              .addComponent(jCmbStartTime1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-              .addComponent(jLabelPassword11)
-              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-              .addComponent(jCmbEndTime1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-              .addComponent(jLabelPassword8)
-              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-              .addComponent(jCmbRoom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-            .addComponent(jLabelPassword6)
+          .addGroup(jPanel2Layout.createSequentialGroup()
+            .addComponent(jLabelPassword14, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jCmbDay1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jCmbStartTime2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jCmbEndTime2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jCmbRoom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addComponent(jCmbDay2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jCmbStartTime3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jCmbEndTime3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jCmbRoom3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addComponent(jCmbDay3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jCmbStartTime4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jCmbEndTime4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jCmbRoom4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addComponent(jCmbDay4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jCmbStartTime5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jCmbEndTime5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jCmbRoom5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addComponent(jCmbDay5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jFmtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabelPassword13)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jFmtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jPnlTimes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(14, 14, 14)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jBtnSubmitMod)
@@ -511,6 +567,56 @@ public class JPanelNewSection extends javax.swing.JPanel {
     }//GEN-LAST:event_jBtnBackModActionPerformed
 
     private void jBtnSubmitModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSubmitModActionPerformed
+      DateFormat df = new SimpleDateFormat("M/d/yy", Locale.ENGLISH);
+      CourseSection section;
+      MeetingDay day;
+      ArrayList<MeetingDay> days = new ArrayList();
+
+      // Create CourseSection object
+      section = new CourseSection();
+      section.course_number = jtxtCourseNumber.getText();
+      section.section_number = Integer.parseInt(jtxtSectionNumber.getText());
+      section.available = true;
+      section.capacity = 30;
+      section.seats_available = section.capacity;
+      section.status = "Open";
+      section.term = jCmbTerm.getSelectedItem().toString();
+      section.student_count = 0;
+      section.type = jCmbType.getSelectedItem().toString();
+      
+      try
+      {
+        section.start_date = new java.sql.Date(df.parse(jFmtStartDate.getText()).getTime());
+        section.last_date = new java.sql.Date(df.parse(jFmtEndDate.getText()).getTime());
+      }
+      catch (ParseException ex)
+      {
+        System.out.println(ex);
+      }
+      
+//      day = new MeetingDay();
+//      
+//      for(Component c : jPnlTimes.getComponents()) {
+//        if (c instanceof JComboBox) { 
+//          if (c.getName().contains("jCmbStartTime")) {
+//            
+//          }
+//          
+//          if (c.getName().contains("jCmbEndTime")) {
+//            
+//          }
+//                    
+//          if (c.getName().contains("jCmbRoom")) {
+//            
+//          }
+//                              
+//          if (c.getName().contains("jCmbDay")) {
+//            
+//          }
+//        }
+//      }
+      
+      CSMS.coursesections.addCourseSection(section, null);
       
       JOptionPane.showMessageDialog(null, "Course has been created");
       CSMS.switchTo("COURSE LISTING");
@@ -569,12 +675,16 @@ public class JPanelNewSection extends javax.swing.JPanel {
   private javax.swing.JComboBox jCmbStartTime5;
   private javax.swing.JComboBox jCmbTerm;
   private javax.swing.JComboBox jCmbType;
+  private javax.swing.JFormattedTextField jFmtEndDate;
+  private javax.swing.JFormattedTextField jFmtStartDate;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabelPassword;
   private javax.swing.JLabel jLabelPassword1;
   private javax.swing.JLabel jLabelPassword10;
   private javax.swing.JLabel jLabelPassword11;
   private javax.swing.JLabel jLabelPassword12;
+  private javax.swing.JLabel jLabelPassword13;
+  private javax.swing.JLabel jLabelPassword14;
   private javax.swing.JLabel jLabelPassword3;
   private javax.swing.JLabel jLabelPassword6;
   private javax.swing.JLabel jLabelPassword7;
@@ -583,6 +693,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
   private javax.swing.JLabel jLabelUsername;
   private javax.swing.JLabel jLabelUsername1;
   private javax.swing.JPanel jPanel2;
+  private javax.swing.JPanel jPnlTimes;
   private javax.swing.JTextField jtxtCapacity;
   private javax.swing.JTextField jtxtCourseName;
   private javax.swing.JTextField jtxtCourseNumber;

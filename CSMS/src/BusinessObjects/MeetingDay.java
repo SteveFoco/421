@@ -14,6 +14,10 @@ public class MeetingDay
   public Timestamp created_at;
   public Timestamp updated_at;
   
+  public MeetingDay() {
+    
+  }
+  
   public MeetingDay(int course_section_id, String room_number, String day,
       Time start_time, Time end_time)
   {
