@@ -25,6 +25,7 @@ public class CSMS {
   static JPanel cardPanel;
   public static Controllers.DBMgr db = new Controllers.DBMgr();
   public static Controllers.UsersController users = new Controllers.UsersController();
+  public static Controllers.CourseSectionController coursesections = new Controllers.CourseSectionController();
   
   public void addComponentToPane(Container pane) {
     

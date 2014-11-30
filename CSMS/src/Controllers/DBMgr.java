@@ -15,7 +15,7 @@ public class DBMgr {
     try {
       Class.forName("com.mysql.jdbc.Driver");
       
-      conn = DriverManager.getConnection("jdbc:mysql://foolinthewave.ddns.net:3306/csms","root","");
+      conn = DriverManager.getConnection("jdbc:mysql://160.153.57.72:3306/csms","sjfoco","Password01");
       st = conn.createStatement();
       
     } catch(Exception ex) {
