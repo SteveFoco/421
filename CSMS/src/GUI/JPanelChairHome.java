@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import Controllers.GUIController;
+
 /**
  *
  * @author cabro_000
@@ -223,11 +225,11 @@ public class JPanelChairHome extends javax.swing.JPanel {
   }// </editor-fold>//GEN-END:initComponents
 
   private void jBtnSearchSchedCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSearchSchedCHActionPerformed
-    CSMS.switchTo("COURSE SEARCH");
+    GUIController.switchTo("COURSE SEARCH");
   }//GEN-LAST:event_jBtnSearchSchedCHActionPerformed
 
   private void jBtnCreateCourseCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCreateCourseCHActionPerformed
-    CSMS.switchTo("ADD COURSE");
+    GUIController.switchTo("ADD COURSE");
   }//GEN-LAST:event_jBtnCreateCourseCHActionPerformed
 
 

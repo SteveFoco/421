@@ -6,6 +6,7 @@
 
 package GUI;
 
+import Controllers.GUIController;
 import javax.swing.JOptionPane;
 
 /**
@@ -145,11 +146,11 @@ public class JPanelConflicts extends javax.swing.JPanel {
   }//GEN-LAST:event_jBtnManualActionPerformed
 
   private void jBtnAutomaticActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAutomaticActionPerformed
-    CSMS.switchTo("REQUIRED CHANGES");
+    GUIController.switchTo("REQUIRED CHANGES");
   }//GEN-LAST:event_jBtnAutomaticActionPerformed
 
   private void jBtnBackSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackSSActionPerformed
-    CSMS.switchTo("CHOOSE SCHEDULE");
+    GUIController.switchTo("CHOOSE SCHEDULE");
   }//GEN-LAST:event_jBtnBackSSActionPerformed
 
 

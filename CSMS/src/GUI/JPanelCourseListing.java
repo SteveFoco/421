@@ -6,12 +6,17 @@
 
 package GUI;
   
+import Controllers.GUIController;
+
 public class JPanelCourseListing extends javax.swing.JPanel {
   
     public JPanelCourseListing() {
         initComponents();
     }
 
+    public void getSearchResults() {
+      jTblResults.setModel(GUIController.db.getCourseSections());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -19,8 +24,7 @@ public class JPanelCourseListing extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-  private void initComponents()
-  {
+  private void initComponents() {
 
     jPanel1 = new javax.swing.JPanel();
     jLabel3 = new javax.swing.JLabel();
@@ -38,35 +42,28 @@ public class JPanelCourseListing extends javax.swing.JPanel {
 
     jTblResults.setAutoCreateRowSorter(true);
     jTblResults.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-    jTblResults.setModel(CSMS.db.getCourseSections());
     jScrollPane1.setViewportView(jTblResults);
 
     jBtnBackCL.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnBackCL.setText("Back");
-    jBtnBackCL.addActionListener(new java.awt.event.ActionListener()
-    {
-      public void actionPerformed(java.awt.event.ActionEvent evt)
-      {
+    jBtnBackCL.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
         jBtnBackCLActionPerformed(evt);
       }
     });
 
     jBtnModifyCL.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnModifyCL.setText("Modify Selected Course");
-    jBtnModifyCL.addActionListener(new java.awt.event.ActionListener()
-    {
-      public void actionPerformed(java.awt.event.ActionEvent evt)
-      {
+    jBtnModifyCL.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
         jBtnModifyCLActionPerformed(evt);
       }
     });
 
     jBtnAddCL.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jBtnAddCL.setText("Add New Course");
-    jBtnAddCL.addActionListener(new java.awt.event.ActionListener()
-    {
-      public void actionPerformed(java.awt.event.ActionEvent evt)
-      {
+    jBtnAddCL.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
         jBtnAddCLActionPerformed(evt);
       }
     });
@@ -127,11 +124,11 @@ public class JPanelCourseListing extends javax.swing.JPanel {
   }//GEN-LAST:event_jBtnModifyCLActionPerformed
 
   private void jBtnAddCLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddCLActionPerformed
-    CSMS.switchTo("NEW SECTION");
+    GUIController.switchTo("NEW SECTION");
   }//GEN-LAST:event_jBtnAddCLActionPerformed
 
   private void jBtnBackCLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackCLActionPerformed
-    CSMS.switchTo("COURSE SEARCH");
+    GUIController.switchTo("COURSE SEARCH");
   }//GEN-LAST:event_jBtnBackCLActionPerformed
 
 

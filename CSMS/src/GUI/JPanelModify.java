@@ -6,6 +6,7 @@
 
 package GUI;
 
+import Controllers.GUIController;
 import javax.swing.JOptionPane;
 
 /**
@@ -271,14 +272,14 @@ public class JPanelModify extends javax.swing.JPanel {
 
   private void jBtnSubmitModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSubmitModActionPerformed
     JOptionPane.showMessageDialog(null, "Course has been created");
-    CSMS.switchTo("COURSE LISTING");
+    GUIController.switchTo("COURSE LISTING");
   }//GEN-LAST:event_jBtnSubmitModActionPerformed
 
   private void jBtnBackModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackModActionPerformed
     int result = JOptionPane.showConfirmDialog(null,
       "Are you sure you wish to go back?", null, JOptionPane.YES_NO_OPTION);
     if(result == JOptionPane.YES_OPTION) {
-      CSMS.switchTo("COURSE LISTING");
+      GUIController.switchTo("COURSE LISTING");
     }
   }//GEN-LAST:event_jBtnBackModActionPerformed
 

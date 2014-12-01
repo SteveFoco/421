@@ -6,6 +6,8 @@
 
 package GUI;
 
+import Controllers.GUIController;
+
 /**
  *
  * @author steev_000
@@ -100,11 +102,11 @@ public class JPanelHeader extends javax.swing.JPanel {
   }// </editor-fold>//GEN-END:initComponents
 
   private void jBtnLogoutCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLogoutCSActionPerformed
-    CSMS.switchTo("LOGIN");
+    GUIController.switchTo("LOGIN");
   }//GEN-LAST:event_jBtnLogoutCSActionPerformed
 
   private void jBtnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnHomeActionPerformed
-    CSMS.switchTo("HOME");
+    GUIController.switchTo("HOME");
   }//GEN-LAST:event_jBtnHomeActionPerformed
 
 

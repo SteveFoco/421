@@ -6,6 +6,8 @@
 
 package GUI;
 
+import Controllers.GUIController;
+
 /**
  *
  * @author steev_000
@@ -126,11 +128,11 @@ public class JPanelChooseSchedule extends javax.swing.JPanel {
   }// </editor-fold>//GEN-END:initComponents
 
   private void jBtnSubmitSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSubmitSSActionPerformed
-    CSMS.switchTo("CONFLICTS");
+    GUIController.switchTo("CONFLICTS");
   }//GEN-LAST:event_jBtnSubmitSSActionPerformed
 
   private void jBtnBackSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackSSActionPerformed
-    CSMS.switchTo("HOME");
+    GUIController.switchTo("HOME");
   }//GEN-LAST:event_jBtnBackSSActionPerformed
 
 

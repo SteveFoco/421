@@ -6,6 +6,8 @@
 
 package GUI;
 
+import Controllers.GUIController;
+
 /**
  *
  * @author steev_000
@@ -163,15 +165,15 @@ public class JPanelHome extends javax.swing.JPanel {
   }// </editor-fold>//GEN-END:initComponents
 
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    CSMS.switchTo("COURSE SEARCH");
+    GUIController.switchTo("COURSE SEARCH");
   }//GEN-LAST:event_jButton1ActionPerformed
 
   private void jBtnDisplayConflictsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDisplayConflictsActionPerformed
-    CSMS.switchTo("CHOOSE SCHEDULE");
+    GUIController.switchTo("CHOOSE SCHEDULE");
   }//GEN-LAST:event_jBtnDisplayConflictsActionPerformed
 
   private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    CSMS.switchTo("NEW SECTION");
+    GUIController.switchTo("NEW SECTION");
   }//GEN-LAST:event_jButton2ActionPerformed
 
 

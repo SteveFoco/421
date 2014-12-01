@@ -6,6 +6,8 @@
 
 package GUI;
 
+import Controllers.GUIController;
+
 /**
  *
  * @author Steve
@@ -214,16 +216,14 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
   }//GEN-LAST:event_jCmbDaysActionPerformed
 
   private void jBtnSearchCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSearchCSActionPerformed
+
+    GUIController.courseListingCard.jTblResults.setModel(GUIController.db.getCourseSections());
     
-    
-    
-    
-    
-    CSMS.switchTo("COURSE LISTING");
+    GUIController.switchTo("COURSE LISTING");
   }//GEN-LAST:event_jBtnSearchCSActionPerformed
 
   private void jBtnBackCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackCSActionPerformed
-    CSMS.switchTo("HOME");
+    GUIController.switchTo("HOME");
   }//GEN-LAST:event_jBtnBackCSActionPerformed
 
 

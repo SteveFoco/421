@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import Controllers.GUIController;
+
 /**
  *
  * @author Caleb
@@ -260,7 +262,7 @@ public class JPanelAddCourse extends javax.swing.JPanel {
   }// </editor-fold>//GEN-END:initComponents
 
   private void jBtnBackModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackModActionPerformed
-    CSMS.switchTo("COURSE SEARCH");
+    GUIController.switchTo("COURSE SEARCH");
   }//GEN-LAST:event_jBtnBackModActionPerformed
 
 

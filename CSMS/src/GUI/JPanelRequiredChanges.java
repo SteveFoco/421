@@ -6,6 +6,7 @@
 
 package GUI;
 
+import Controllers.GUIController;
 import javax.swing.JOptionPane;
 
 /**
@@ -129,11 +130,11 @@ public class JPanelRequiredChanges extends javax.swing.JPanel {
 
   private void jBtnManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnManualActionPerformed
     JOptionPane.showMessageDialog(null, "All conflicts have been resolved!");
-    CSMS.switchTo("HOME");
+    GUIController.switchTo("HOME");
   }//GEN-LAST:event_jBtnManualActionPerformed
 
   private void jBtnBackSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackSSActionPerformed
-    CSMS.switchTo("CONFLICTS");
+    GUIController.switchTo("CONFLICTS");
   }//GEN-LAST:event_jBtnBackSSActionPerformed
 
 
