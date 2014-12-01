@@ -15,14 +15,18 @@ public class CourseSection
   public String term;
   public int student_count;
   public String type;
-  public Date first_date;
+  public Date start_date;
   public Date last_date;
   public Timestamp created_at;
   public Timestamp updated_at;
   
+  public CourseSection() {
+    
+  }
+  
   public CourseSection(String course_number, int section_number, boolean available, 
       int capacity, int seats_available, String status, String term,
-      int student_count, String type, Date first_date, Date last_date)
+      int student_count, String type, Date start_date, Date last_date)
   {
     this.course_number = course_number;
     this.section_number = section_number;
@@ -33,7 +37,7 @@ public class CourseSection
     this.term = term;
     this.student_count = student_count;
     this.type = type;
-    this.first_date = first_date;
+    this.start_date = start_date;
     this.last_date = last_date;
   }
   
