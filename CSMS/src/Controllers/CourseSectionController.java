@@ -21,10 +21,8 @@ public class CourseSectionController {
     int secId = 0;
     
     try {
-      
       rs.next();
       secId = rs.getInt(1);
-      
     } catch (SQLException ex) {
       Logger.getLogger(CourseSectionController.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -34,7 +32,5 @@ public class CourseSectionController {
       md.course_section_id = secId;
       db.saveMeetingDay(md);
     }
-    
-    // Return all course sections from database table
   }
 }

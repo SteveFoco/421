@@ -134,7 +134,7 @@ public class JPanelLogin extends javax.swing.JPanel {
   }// </editor-fold>//GEN-END:initComponents
 
   private void jBtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLoginActionPerformed
-  /*  if(jTxtUsername.getText().isEmpty() && jPwdPassword.getText().isEmpty()) {
+    if(jTxtUsername.getText().isEmpty() && jPwdPassword.getText().isEmpty()) {
       jLblError.setText("Please enter a usename and password!");
     } else if(jTxtUsername.getText().isEmpty()) {
       jLblError.setText("Please enter a username!");
@@ -153,8 +153,8 @@ public class JPanelLogin extends javax.swing.JPanel {
         jPwdPassword.setText(null);
       }
     }
-  */
-    CSMS.switchTo(("HOME"));
+  
+    //CSMS.switchTo(("HOME"));
   }//GEN-LAST:event_jBtnLoginActionPerformed
 
   private void jTxtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtUsernameActionPerformed

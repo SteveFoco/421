@@ -511,7 +511,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
     }//GEN-LAST:event_jBtnBackModActionPerformed
 
     private void jBtnSubmitModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSubmitModActionPerformed
-      
+            
       JOptionPane.showMessageDialog(null, "Course has been created");
       CSMS.switchTo("COURSE LISTING");
     }//GEN-LAST:event_jBtnSubmitModActionPerformed
