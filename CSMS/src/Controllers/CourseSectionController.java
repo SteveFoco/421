@@ -30,12 +30,28 @@ public class CourseSectionController {
       System.out.println(ex);
     }
     
-    System.out.println(days);
-    
     // Save MeetingDay objects
-    for (MeetingDay md : days) {
-      md.course_section_id = secId;
-      db.saveMeetingDay(md);
-    }
+    //for(MeetingDay md : days) {
+    //  md.course_section_id = secId;
+    //  db.saveMeetingDay(md);
+    // }
+
+    MeetingDay day = new MeetingDay();
+    
+    day.course_section_id = secId;
+    day.room_number = "SE117";
+    day.day = "M";
+    day.start_time = new Time(cal.getTimeInMillis());
+    day.end_time = new Time(cal.getTimeInMillis());
+    
+    db.saveMeetingDay(day);
+    
+//    for(MeetingDay md : days) {
+//      md.course_section_id = secId;
+//      db.saveMeetingDay(md);
+//    }
+    
+    // Return all course sections from database table
+
   }
 }
