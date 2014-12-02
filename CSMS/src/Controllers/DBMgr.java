@@ -58,6 +58,32 @@ public class DBMgr {
     
     return null;
   }
+  
+    public ResultSet getDepartments() {
+    try {
+      String query = "SELECT name FROM departments ORDER BY name ASC";
+      rs = st.executeQuery(query);
+      
+      return rs;
+    } catch(Exception ex) {
+      System.out.println(ex);    
+    }
+    
+    return null;
+  }
+  
+  public ResultSet getCourseNumbers(String dept) {
+    try {
+      String query = "SELECT course_number FROM courses WHERE department = '" + dept + "'";
+      rs = st.executeQuery(query);
+      
+      return rs;
+    } catch(Exception ex) {
+      System.out.println(ex);    
+    }  
+    
+    return null;
+  }
 
   public static DefaultTableModel buildTable(ResultSet rs) throws SQLException {
     ResultSetMetaData metaData = rs.getMetaData();

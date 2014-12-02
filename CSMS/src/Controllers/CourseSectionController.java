@@ -4,7 +4,6 @@ import BusinessObjects.CourseSection;
 import BusinessObjects.MeetingDay;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Time;
 import java.util.Calendar;
 
 

@@ -173,6 +173,7 @@ public class JPanelHome extends javax.swing.JPanel {
   }//GEN-LAST:event_jBtnDisplayConflictsActionPerformed
 
   private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    GUIController.buildDeptComboBox();
     GUIController.switchTo("NEW SECTION");
   }//GEN-LAST:event_jButton2ActionPerformed
 

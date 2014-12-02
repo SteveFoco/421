@@ -8,12 +8,15 @@ package Controllers;
 
 import GUI.*;
 import java.awt.*;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.*;
 
 public class GUIController {
 
   //CardLayout cards;
   static JPanel cardPanel;
+  public static JPanelNewSection newSectionCard = new JPanelNewSection();
   public static Controllers.DBMgr db = new Controllers.DBMgr();
   public static Controllers.UsersController users = new Controllers.UsersController();
   public static Controllers.CourseSectionController coursesections = new Controllers.CourseSectionController();
@@ -33,7 +36,6 @@ public class GUIController {
     JPanelNewUserAccount newUserAccountCard = new JPanelNewUserAccount();
     JPanelUpdateAccount updateAccountCard = new JPanelUpdateAccount();
     JPanelAddCourse addCourseCard = new JPanelAddCourse();
-    JPanelNewSection newSectionCard = new JPanelNewSection();
     JPanelChooseSchedule chooseScheduleCard = new JPanelChooseSchedule();
     JPanelRequiredChanges requiredChangesCard = new JPanelRequiredChanges();
     
@@ -66,6 +68,40 @@ public class GUIController {
   public static void switchTo(String cardCode) {
     CardLayout c1 = (CardLayout)(cardPanel.getLayout());
     c1.show(cardPanel, cardCode);
+  }
+  
+    public static void buildDeptComboBox() {
+    ArrayList<String> names = new ArrayList<>();
+    
+    ResultSet rs = db.getDepartments();
+    
+    try {
+      while(rs.next()) {
+        names.add(rs.getString("name"));
+      }        
+    } catch(Exception ex) {
+      System.out.println(ex);
+    }
+    
+    DefaultComboBoxModel model = new DefaultComboBoxModel(names.toArray());
+    newSectionCard.jCmbDept.setModel(model);
+  }
+  
+  public static void buildCourseNumComboBox() {
+    ArrayList<String> numbers = new ArrayList<>();
+    
+    ResultSet rs = db.getCourseNumbers(newSectionCard.jCmbDept.getSelectedItem().toString());
+    
+    try {
+      while(rs.next()) {
+        numbers.add(rs.getString("course_number"));
+      }
+    } catch(Exception ex) {
+      System.out.println(ex);
+    }
+    
+    DefaultComboBoxModel model = new DefaultComboBoxModel(numbers.toArray());
+    newSectionCard.jCmbCourseNum.setModel(model);
   }
 
   public static void createGui() {
