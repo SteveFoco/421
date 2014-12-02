@@ -190,6 +190,8 @@ public class DBMgr {
       pst.setDate(10, section.start_date);
       pst.setDate(11, section.last_date);
 
+      System.out.println(pst);
+      
       pst.execute();
       result = pst.getGeneratedKeys();
     }
