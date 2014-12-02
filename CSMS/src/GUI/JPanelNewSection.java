@@ -68,7 +68,6 @@ public class JPanelNewSection extends javax.swing.JPanel {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
-    
     jPanel2 = new javax.swing.JPanel();
     jBtnSubmitMod = new javax.swing.JButton();
     jLabelUsername1 = new javax.swing.JLabel();
@@ -145,6 +144,11 @@ public class JPanelNewSection extends javax.swing.JPanel {
 
     jCmbDept.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbDept.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Dept.", "Accounting", "Art", "Biology", "Black Studies", "Col Business & Management", "Communication & Digital Media", "Chemistry", "Computer Info Syst", "Criminal Justice", "Communication", "Computer Science", "Elec & Computer Engr", "Economics", "Education Leadership", "English Lang Program", "English", "Educational Tech & Development", "Engineering Tech Management", "Finance", "French", "Geography", "German", "Gender Studies", "History", "Honors", "Health Sciences", "Japanese", "Kinesiology", "Latin", "Law", "Leadership and Service", "Administrative Science", "Mathematical Sciences", "Mechanical Engr", "Master of Energy & Materials", "Modern Foreign Lang", "Management", "Marketing", "Medical Laboratory Science", "Music Education", "Music", "Natural Science", "Nursing", "Occupational Therapy", "Philosophy", "Physics", "Political Science", "Psychology", "Robert Fellows Seminar", "Rhetoric & Prof Writing", "Sociology", "Spanish", "Social Work", "Teaching Chinese As a Foreign", "Teacher Education--Mis/Sec Sch", "Teacher Education", "Theater", "Youth Services" }));
+    jCmbDept.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jCmbDeptActionPerformed(evt);
+      }
+    });
 
     jCmbTerm.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbTerm.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Term", "FA14", "WI15" }));
@@ -238,30 +242,31 @@ public class JPanelNewSection extends javax.swing.JPanel {
                     .addComponent(jtxtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(jCmbType, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+          .addComponent(jLabel3)
+          .addGroup(jPanel2Layout.createSequentialGroup()
+            .addComponent(jBtnSubmitMod)
+            .addGap(18, 18, 18)
+            .addComponent(jBtnBackMod))
           .addGroup(jPanel2Layout.createSequentialGroup()
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(jCmbInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(12, 12, 12)
-                    .addComponent(jtxtSectionNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                  .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jCmbInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jtxtSectionNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabelPassword12)
-                  .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelPassword14)
-                    .addComponent(jFmtStartDate, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                    .addComponent(jLabelPassword13)
-                    .addComponent(jFmtEndDate, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                    .addComponent(jCmbTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
-              .addComponent(jLabel3)
+                  .addComponent(jCmbTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
               .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jBtnSubmitMod)
                 .addGap(18, 18, 18)
-                .addComponent(jBtnBackMod)))
-            .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                  .addComponent(jLabelPassword14)
+                  .addComponent(jFmtStartDate)
+                  .addComponent(jLabelPassword13)
+                  .addComponent(jFmtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         .addGap(122, 122, 122))
     );
     jPanel2Layout.setVerticalGroup(
@@ -300,15 +305,9 @@ public class JPanelNewSection extends javax.swing.JPanel {
               .addComponent(jLabelPassword12)
               .addComponent(jLabelPassword10))
             .addGap(31, 31, 31)))
-        .addGap(18, 18, 18)
+        .addGap(25, 25, 25)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(jBtnSubmitMod)
-              .addComponent(jBtnBackMod))
-            .addGap(270, 270, 270))
+          .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addGroup(jPanel2Layout.createSequentialGroup()
             .addComponent(jLabelPassword14, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -316,8 +315,12 @@ public class JPanelNewSection extends javax.swing.JPanel {
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jLabelPassword13)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jFmtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addComponent(jFmtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jBtnSubmitMod)
+          .addComponent(jBtnBackMod))
+        .addContainerGap(150, Short.MAX_VALUE))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -376,23 +379,26 @@ public class JPanelNewSection extends javax.swing.JPanel {
       int totalRows = jTblMeetingDays.getRowCount();
       MeetingDay day = new MeetingDay();
       jTblMeetingDays.clearSelection();
-      
-
-      GUIController.coursesections.addCourseSection(section, null);
 
       for (int row = 0; row < totalRows; row++) {
-        // Create MeetingDay object
-        try {
-          day.start_time = new Time(tf.parse(jTblMeetingDays.getValueAt(row, 0).toString()).getTime());
-          day.start_time = new Time(tf.parse(jTblMeetingDays.getValueAt(row, 1).toString()).getTime());
-        } catch (ParseException ex) {
-          System.out.println(ex);
+        if (jTblMeetingDays.getValueAt(row, 0) != null &&
+            jTblMeetingDays.getValueAt(row, 1) != null &&
+            jTblMeetingDays.getValueAt(row, 2) != null &&
+            jTblMeetingDays.getValueAt(row, 3) != null)
+        {
+          // Create MeetingDay object
+          try {
+            day.start_time = new Time(tf.parse(jTblMeetingDays.getValueAt(row, 0).toString()).getTime());
+            day.end_time = new Time(tf.parse(jTblMeetingDays.getValueAt(row, 1).toString()).getTime());
+          } catch (ParseException ex) {
+            System.out.println(ex);
+          }
+          day.room_number = jTblMeetingDays.getValueAt(row, 2).toString();
+          day.day = jTblMeetingDays.getValueAt(row, 3).toString();
+
+          // Save MeetingDay to MeetingDay list
+          days.add(day);
         }
-        day.room_number = jTblMeetingDays.getValueAt(row, 2).toString();
-        day.day = jTblMeetingDays.getValueAt(row, 3).toString();
-        
-        // Save MeetingDay to MeetingDay list
-        days.add(day);
       }
 
       GUIController.coursesections.addCourseSection(section, days.toArray(new MeetingDay[days.size()]));
