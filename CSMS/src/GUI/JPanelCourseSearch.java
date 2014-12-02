@@ -7,6 +7,7 @@
 package GUI;
 
 import Controllers.GUIController;
+import java.sql.SQLException;
 
 /**
  *
@@ -217,7 +218,11 @@ public class JPanelCourseSearch extends javax.swing.JPanel {
 
   private void jBtnSearchCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSearchCSActionPerformed
 
-    GUIController.courseListingCard.jTblResults.setModel(GUIController.db.getCourseSections());
+      try {
+        GUIController.courseListingCard.jTblResults.setModel(GUIController.buildTable());
+      } catch (SQLException ex) {
+        System.out.println(ex);
+      }
     
     GUIController.switchTo("COURSE LISTING");
   }//GEN-LAST:event_jBtnSearchCSActionPerformed

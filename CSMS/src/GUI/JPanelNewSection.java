@@ -19,7 +19,7 @@ import java.util.Locale;
 import javax.swing.table.TableColumn;
 import java.sql.Time;
 import java.sql.Date;
-
+import java.sql.SQLException;
 /**
  *
  * @author Steve
@@ -112,7 +112,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jLabelPassword1.setText("Section Number:");
 
     jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-    jLabel3.setText("New Course Entry");
+    jLabel3.setText("New Course Section Entry");
 
     jLabelUsername.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jLabelUsername.setText("Course Department:");
@@ -128,6 +128,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
       }
     });
 
+    jtxtCourseName.setEditable(false);
     jtxtCourseName.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
     jtxtSectionNumber.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -163,7 +164,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jLabelPassword3.setText("Instructor:");
 
     jLabelPassword10.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jLabelPassword10.setText("Type");
+    jLabelPassword10.setText("Type:");
 
     jCmbType.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Type", "LEC", "HYB", "ONL" }));
@@ -202,7 +203,13 @@ public class JPanelNewSection extends javax.swing.JPanel {
     });
     jScrollPane1.setViewportView(jTblMeetingDays);
 
+    jCmbCourseNum.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbCourseNum.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
+    jCmbCourseNum.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jCmbCourseNumActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
@@ -213,7 +220,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel2Layout.createSequentialGroup()
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jCmbDept, 0, 259, Short.MAX_VALUE)
+              .addComponent(jCmbDept, 0, 261, Short.MAX_VALUE)
               .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabelUsername)
@@ -231,13 +238,13 @@ public class JPanelNewSection extends javax.swing.JPanel {
                   .addComponent(jtxtCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGroup(jPanel2Layout.createSequentialGroup()
                     .addComponent(jtxtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGap(18, 18, 18)
                     .addComponent(jCmbType, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
               .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabelPassword1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelPassword9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelPassword10))))
           .addComponent(jLabel3)
           .addGroup(jPanel2Layout.createSequentialGroup()
@@ -248,7 +255,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jCmbInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jtxtSectionNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
               .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,7 +284,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
             .addGap(1, 1, 1)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(jCmbDept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jCmbCourseNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(jCmbCourseNum, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jLabelPassword3)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -317,7 +324,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jBtnSubmitMod)
           .addComponent(jBtnBackMod))
-        .addContainerGap(150, Short.MAX_VALUE))
+        .addContainerGap(155, Short.MAX_VALUE))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -340,7 +347,11 @@ public class JPanelNewSection extends javax.swing.JPanel {
       int result = JOptionPane.showConfirmDialog(null,
         "Are you sure you wish to go back?", null, JOptionPane.YES_NO_OPTION);
       if(result == JOptionPane.YES_OPTION) {
-        GUIController.courseListingCard.jTblResults.setModel(GUIController.db.getCourseSections());
+        try {
+          GUIController.courseListingCard.jTblResults.setModel(GUIController.buildTable());
+        } catch (SQLException ex) {
+          System.out.println(ex);
+        }
         GUIController.switchTo("COURSE LISTING");
       }
     }//GEN-LAST:event_jBtnBackModActionPerformed
@@ -402,7 +413,11 @@ public class JPanelNewSection extends javax.swing.JPanel {
       GUIController.coursesections.addCourseSection(section, days.toArray(new MeetingDay[days.size()]));
       
       JOptionPane.showMessageDialog(null, "Course has been created");
-      GUIController.courseListingCard.jTblResults.setModel(GUIController.db.getCourseSections());
+      try {
+        GUIController.courseListingCard.jTblResults.setModel(GUIController.buildTable());
+      } catch (SQLException ex) {
+        System.out.println(ex);
+      }
       GUIController.switchTo("COURSE LISTING");
     }//GEN-LAST:event_jBtnSubmitModActionPerformed
 
@@ -413,6 +428,10 @@ public class JPanelNewSection extends javax.swing.JPanel {
   private void jCmbDeptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmbDeptActionPerformed
     GUIController.buildCourseNumComboBox();
   }//GEN-LAST:event_jCmbDeptActionPerformed
+
+  private void jCmbCourseNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmbCourseNumActionPerformed
+    GUIController.buildCourseNameTextBox();
+  }//GEN-LAST:event_jCmbCourseNumActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -440,7 +459,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JTable jTblMeetingDays;
   private javax.swing.JTextField jtxtCapacity;
-  private javax.swing.JTextField jtxtCourseName;
+  public javax.swing.JTextField jtxtCourseName;
   private javax.swing.JTextField jtxtSectionNumber;
   // End of variables declaration//GEN-END:variables
 }

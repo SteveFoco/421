@@ -7,6 +7,7 @@
 package GUI;
   
 import Controllers.GUIController;
+import java.sql.SQLException;
 
 public class JPanelCourseListing extends javax.swing.JPanel {
   
@@ -15,7 +16,11 @@ public class JPanelCourseListing extends javax.swing.JPanel {
     }
 
     public void getSearchResults() {
-      jTblResults.setModel(GUIController.db.getCourseSections());
+      try {
+        jTblResults.setModel(GUIController.buildTable());
+      } catch (SQLException ex) {
+        System.out.println(ex);
+      }
       jlblResultCount.setText(jTblResults.getRowCount() + " Course(s) Found");
     }
     /**
@@ -141,6 +146,6 @@ public class JPanelCourseListing extends javax.swing.JPanel {
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   public javax.swing.JTable jTblResults;
-  private javax.swing.JLabel jlblResultCount;
+  public javax.swing.JLabel jlblResultCount;
   // End of variables declaration//GEN-END:variables
 }

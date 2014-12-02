@@ -41,7 +41,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCmbDept" alignment="0" pref="259" max="32767" attributes="0"/>
+                              <Component id="jCmbDept" alignment="0" pref="261" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabelUsername" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -63,7 +63,7 @@
                                       <Component id="jtxtCourseName" min="-2" pref="315" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jtxtCapacity" min="-2" pref="59" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="jCmbType" min="-2" pref="95" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -72,7 +72,7 @@
                                   <Component id="jLabelPassword1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabelPassword9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabelPassword10" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -87,7 +87,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jCmbInstructor" min="-2" pref="261" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jtxtSectionNumber" min="-2" pref="106" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane1" min="-2" pref="564" max="-2" attributes="0"/>
@@ -127,7 +127,7 @@
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jCmbDept" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCmbCourseNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jCmbCourseNum" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabelPassword3" min="-2" max="-2" attributes="0"/>
@@ -179,7 +179,7 @@
                       <Component id="jBtnSubmitMod" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jBtnBackMod" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="150" max="32767" attributes="0"/>
+                  <EmptySpace pref="155" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -217,7 +217,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="24" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="New Course Entry"/>
+            <Property name="text" type="java.lang.String" value="New Course Section Entry"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelUsername">
@@ -249,10 +249,14 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jtxtCourseName">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="14" style="0"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="jtxtSectionNumber">
           <Properties>
@@ -400,7 +404,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Type"/>
+            <Property name="text" type="java.lang.String" value="Type:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="jCmbType">
@@ -472,10 +476,16 @@
         </Container>
         <Component class="javax.swing.JComboBox" name="jCmbCourseNum">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="0"/>
+            </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { })" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCmbCourseNumActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>

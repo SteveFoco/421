@@ -9,8 +9,14 @@ package Controllers;
 import GUI.*;
 import java.awt.*;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class GUIController {
 
@@ -70,7 +76,7 @@ public class GUIController {
     c1.show(cardPanel, cardCode);
   }
   
-    public static void buildDeptComboBox() {
+  public static void buildDeptComboBox() {
     ArrayList<String> names = new ArrayList<>();
     
     ResultSet rs = db.getDepartments();
@@ -85,6 +91,20 @@ public class GUIController {
     
     DefaultComboBoxModel model = new DefaultComboBoxModel(names.toArray());
     newSectionCard.jCmbDept.setModel(model);
+  }
+  
+  public static void buildCourseNameTextBox() {
+    ResultSet rs = db.getCourseName(newSectionCard.jCmbCourseNum.getSelectedItem().toString());
+    String title = new String();
+    
+    try {
+      rs.next();
+      title = rs.getString("title");
+    } catch (Exception ex) {
+      System.out.println(ex);
+    }
+    
+    newSectionCard.jtxtCourseName.setText(title);
   }
   
   public static void buildCourseNumComboBox() {
@@ -104,6 +124,41 @@ public class GUIController {
     newSectionCard.jCmbCourseNum.setModel(model);
   }
 
+  public static DefaultTableModel buildTable() throws SQLException {
+    ResultSet rs = db.getCourseSections();
+    ResultSetMetaData metaData = rs.getMetaData();
+    int rowCount = 0;
+    
+    // names of columns
+    Vector<String> columnNames = new Vector<String>();
+    int columnCount = metaData.getColumnCount();
+
+    columnNames.add("Course #");
+    columnNames.add("Name");
+    columnNames.add("Line No.");
+    columnNames.add("Professor");
+    columnNames.add("Days");
+    columnNames.add("Start");
+    columnNames.add("End");
+    columnNames.add("Room");
+    columnNames.add("Students");
+    
+    // data of the table
+    Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+    while (rs.next()) {
+        Vector<Object> vector = new Vector<Object>();
+        for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+            vector.add(rs.getObject(columnIndex));
+        }
+        data.add(vector);
+        rowCount++;
+    }
+
+    courseListingCard.jlblResultCount.setText(rowCount + " Course(s) Found");
+    
+    return new DefaultTableModel(data, columnNames);
+  }
+  
   public static void createGui() {
     //JFrameMain mainFrame = new JFrameMain();
     JFrame mainFrame = new JFrame();

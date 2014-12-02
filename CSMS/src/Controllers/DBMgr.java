@@ -41,17 +41,14 @@ public class DBMgr {
     return null;
   }
   
-  public DefaultTableModel getCourseSections() {
+  public ResultSet getCourseSections() {
     try {
       String query = "SELECT cs.course_number, c.title, cs.id, cs.professor, md.day, md.start_time,"
         + "md.end_time, md.room_number, cs.student_count FROM course_sections AS cs, courses AS c, meeting_days AS md "
         + "WHERE cs.course_number = c.course_number AND md.course_section_id = cs.id";
       rs = st.executeQuery(query);
       
-      //JTable table = new JTable(buildTable(rs));
-      DefaultTableModel model = buildTable(rs);
-      return model;
-      
+      return rs;      
     } catch(Exception ex) {
       System.out.println(ex);
     }
@@ -73,49 +70,33 @@ public class DBMgr {
   }
   
   public ResultSet getCourseNumbers(String dept) {
+    rs = null;
+    
     try {
       String query = "SELECT course_number FROM courses WHERE department = '" + dept + "'";
       rs = st.executeQuery(query);
       
-      return rs;
     } catch(Exception ex) {
       System.out.println(ex);    
     }  
     
-    return null;
-  }
-
-  public static DefaultTableModel buildTable(ResultSet rs) throws SQLException {
-    ResultSetMetaData metaData = rs.getMetaData();
-
-    // names of columns
-    Vector<String> columnNames = new Vector<String>();
-    int columnCount = metaData.getColumnCount();
-    //for (int column = 1; column <= columnCount; column++) {
-        columnNames.add("Course #");
-        columnNames.add("Name");
-        columnNames.add("Line No.");
-        columnNames.add("Professor");
-        columnNames.add("Days");
-        columnNames.add("Start");
-        columnNames.add("End");
-        columnNames.add("Room");
-        columnNames.add("Students");
-    //}
-
-    // data of the table
-    Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-    while (rs.next()) {
-        Vector<Object> vector = new Vector<Object>();
-        for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
-            vector.add(rs.getObject(columnIndex));
-        }
-        data.add(vector);
-    }
-
-    return new DefaultTableModel(data, columnNames);
+    return rs;
   }
   
+  public ResultSet getCourseName(String courseNum) {
+    rs = null;
+    
+    try {
+      String query = "SELECT title FROM courses WHERE course_number = '" + courseNum + "'";
+      rs = st.executeQuery(query);
+      
+    } catch(Exception ex) {
+      System.out.println(ex);    
+    }  
+    
+    return rs;  
+  }
+
   public ResultSet getCourseSection(int id) {
     ResultSet results = null;
     
