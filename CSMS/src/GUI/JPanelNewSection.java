@@ -139,7 +139,6 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jtxtCapacity.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
     jCmbInstructor.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-    jCmbInstructor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Instructor", "Cho, I", "James, Scott" }));
 
     jCmbDept.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbDept.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Dept.", "Accounting", "Art", "Biology", "Black Studies", "Col Business & Management", "Communication & Digital Media", "Chemistry", "Computer Info Syst", "Criminal Justice", "Communication", "Computer Science", "Elec & Computer Engr", "Economics", "Education Leadership", "English Lang Program", "English", "Educational Tech & Development", "Engineering Tech Management", "Finance", "French", "Geography", "German", "Gender Studies", "History", "Honors", "Health Sciences", "Japanese", "Kinesiology", "Latin", "Law", "Leadership and Service", "Administrative Science", "Mathematical Sciences", "Mechanical Engr", "Master of Energy & Materials", "Modern Foreign Lang", "Management", "Marketing", "Medical Laboratory Science", "Music Education", "Music", "Natural Science", "Nursing", "Occupational Therapy", "Philosophy", "Physics", "Political Science", "Psychology", "Robert Fellows Seminar", "Rhetoric & Prof Writing", "Sociology", "Spanish", "Social Work", "Teaching Chinese As a Foreign", "Teacher Education--Mis/Sec Sch", "Teacher Education", "Theater", "Youth Services" }));
@@ -427,6 +426,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
 
   private void jCmbDeptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmbDeptActionPerformed
     GUIController.buildCourseNumComboBox();
+    GUIController.buildProfComboBox();
   }//GEN-LAST:event_jCmbDeptActionPerformed
 
   private void jCmbCourseNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmbCourseNumActionPerformed
@@ -439,7 +439,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
   private javax.swing.JButton jBtnSubmitMod;
   public javax.swing.JComboBox jCmbCourseNum;
   public javax.swing.JComboBox jCmbDept;
-  private javax.swing.JComboBox jCmbInstructor;
+  public javax.swing.JComboBox jCmbInstructor;
   private javax.swing.JComboBox jCmbTerm;
   private javax.swing.JComboBox jCmbType;
   private javax.swing.JFormattedTextField jFmtEndDate;

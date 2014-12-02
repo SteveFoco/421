@@ -13,8 +13,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -91,6 +89,23 @@ public class GUIController {
     
     DefaultComboBoxModel model = new DefaultComboBoxModel(names.toArray());
     newSectionCard.jCmbDept.setModel(model);
+  }
+  
+  public static void buildProfComboBox() {
+    ArrayList<String> names = new ArrayList<>();
+    
+    ResultSet rs = db.getProfessors(newSectionCard.jCmbDept.getSelectedItem().toString());
+    
+    try {
+      while(rs.next()) {
+        names.add(rs.getString("last_name") + ", " + rs.getString("first_name"));
+      }        
+    } catch(Exception ex) {
+      System.out.println(ex);
+    }
+    
+    DefaultComboBoxModel model = new DefaultComboBoxModel(names.toArray());
+    newSectionCard.jCmbInstructor.setModel(model);
   }
   
   public static void buildCourseNameTextBox() {

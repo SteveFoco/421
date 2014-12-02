@@ -56,7 +56,7 @@ public class DBMgr {
     return null;
   }
   
-    public ResultSet getDepartments() {
+  public ResultSet getDepartments() {
     try {
       String query = "SELECT name FROM departments ORDER BY name ASC";
       rs = st.executeQuery(query);
@@ -67,6 +67,23 @@ public class DBMgr {
     }
     
     return null;
+  }
+  
+  public ResultSet getProfessors(String dept) {
+    rs = null;
+    
+    try {
+      String query = "SELECT last_name, first_name "
+                   + "FROM professors "
+                   + "WHERE department = '" + dept + "' "
+                   + "ORDER BY last_name ASC";
+      rs = st.executeQuery(query);
+      
+    } catch(Exception ex) {
+      System.out.println(ex);    
+    }  
+    
+    return rs;
   }
   
   public ResultSet getCourseNumbers(String dept) {
