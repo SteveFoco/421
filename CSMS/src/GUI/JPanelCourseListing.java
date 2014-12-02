@@ -16,6 +16,7 @@ public class JPanelCourseListing extends javax.swing.JPanel {
 
     public void getSearchResults() {
       jTblResults.setModel(GUIController.db.getCourseSections());
+      jlblResultCount.setText(jTblResults.getRowCount() + " Course(s) Found");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,7 +34,7 @@ public class JPanelCourseListing extends javax.swing.JPanel {
     jBtnBackCL = new javax.swing.JButton();
     jBtnModifyCL = new javax.swing.JButton();
     jBtnAddCL = new javax.swing.JButton();
-    jLabelUsername = new javax.swing.JLabel();
+    jlblResultCount = new javax.swing.JLabel();
 
     setPreferredSize(new java.awt.Dimension(736, 401));
 
@@ -68,8 +69,8 @@ public class JPanelCourseListing extends javax.swing.JPanel {
       }
     });
 
-    jLabelUsername.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-    jLabelUsername.setText("1 Course(s) Found");
+    jlblResultCount.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+    jlblResultCount.setText("1 Course(s) Found");
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -79,7 +80,7 @@ public class JPanelCourseListing extends javax.swing.JPanel {
         .addContainerGap()
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jLabel3)
-          .addComponent(jLabelUsername)
+          .addComponent(jlblResultCount)
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(10, 10, 10)
             .addComponent(jBtnBackCL)
@@ -96,7 +97,7 @@ public class JPanelCourseListing extends javax.swing.JPanel {
         .addContainerGap()
         .addComponent(jLabel3)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jLabelUsername)
+        .addComponent(jlblResultCount)
         .addGap(5, 5, 5)
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -137,9 +138,9 @@ public class JPanelCourseListing extends javax.swing.JPanel {
   private javax.swing.JButton jBtnBackCL;
   private javax.swing.JButton jBtnModifyCL;
   private javax.swing.JLabel jLabel3;
-  private javax.swing.JLabel jLabelUsername;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JScrollPane jScrollPane1;
   public javax.swing.JTable jTblResults;
+  private javax.swing.JLabel jlblResultCount;
   // End of variables declaration//GEN-END:variables
 }

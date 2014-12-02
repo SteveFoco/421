@@ -340,6 +340,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
       int result = JOptionPane.showConfirmDialog(null,
         "Are you sure you wish to go back?", null, JOptionPane.YES_NO_OPTION);
       if(result == JOptionPane.YES_OPTION) {
+        GUIController.courseListingCard.jTblResults.setModel(GUIController.db.getCourseSections());
         GUIController.switchTo("COURSE LISTING");
       }
     }//GEN-LAST:event_jBtnBackModActionPerformed
