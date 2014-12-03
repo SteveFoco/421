@@ -6,7 +6,6 @@
 
 package GUI;
 
-
 import Controllers.GUIController;
 import javax.swing.*;
 import BusinessObjects.CourseSection;
@@ -25,31 +24,28 @@ import java.sql.SQLException;
  * @author Steve
  */
 public class JPanelNewSection extends javax.swing.JPanel {
+    private TableColumn startTimeColumn, endTimeColumn, roomColumn, dayColumn;
+    private JComboBox timeBox, roomBox, dayBox;
+  
     public JPanelNewSection() {
 
         initComponents();
         
-        // Initialize combo boxes for the tables cells
-        TableColumn startTimeColumn = jTblMeetingDays.getColumnModel().getColumn(0);
-        TableColumn endTimeColumn = jTblMeetingDays.getColumnModel().getColumn(1);
-        TableColumn roomColumn = jTblMeetingDays.getColumnModel().getColumn(2);
-        TableColumn dayColumn = jTblMeetingDays.getColumnModel().getColumn(3);
+        // Initialize combo boxes for the table's cells
+        startTimeColumn = jTblMeetingDays.getColumnModel().getColumn(0);
+        endTimeColumn = jTblMeetingDays.getColumnModel().getColumn(1);
+        roomColumn = jTblMeetingDays.getColumnModel().getColumn(2);
+        dayColumn = jTblMeetingDays.getColumnModel().getColumn(3);
         
-        JComboBox timeBox = new JComboBox();
-        timeBox.addItem("8:30 AM");
-        timeBox.addItem("9:00 AM");
-        timeBox.addItem("9:30 AM");
-        timeBox.addItem("12:30 PM");
-        timeBox.addItem("1:00 PM");
-        timeBox.addItem("1:30 PM");
+        // Set data model for start and end time combo boxes
+        timeBox = new JComboBox();
+        timeBox.setModel(GUIController.buildTimeComboBox());
         
-        JComboBox roomBox = new JComboBox();
-        roomBox.addItem("SE117");
-        roomBox.addItem("SE118");
-        roomBox.addItem("SE119");
-        roomBox.addItem("SE120");
+        // Set data model for room combo box with capacity of rooms at 0
+        roomBox = new JComboBox();
+        roomBox.setModel(GUIController.buildRoomComboBox(0));
         
-        JComboBox dayBox = new JComboBox();
+        dayBox = new JComboBox();
         dayBox.addItem("M");
         dayBox.addItem("T");
         dayBox.addItem("W");
@@ -79,7 +75,6 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jtxtCourseName = new javax.swing.JTextField();
     jtxtSectionNumber = new javax.swing.JTextField();
     jLabelPassword9 = new javax.swing.JLabel();
-    jtxtCapacity = new javax.swing.JTextField();
     jCmbInstructor = new javax.swing.JComboBox();
     jCmbDept = new javax.swing.JComboBox();
     jCmbTerm = new javax.swing.JComboBox();
@@ -94,6 +89,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jScrollPane1 = new javax.swing.JScrollPane();
     jTblMeetingDays = new javax.swing.JTable();
     jCmbCourseNum = new javax.swing.JComboBox();
+    jFmtCapacity = new javax.swing.JFormattedTextField();
 
     jPanel2.setPreferredSize(new java.awt.Dimension(821, 471));
 
@@ -136,9 +132,12 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jLabelPassword9.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jLabelPassword9.setText("Capacity:");
 
-    jtxtCapacity.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-
     jCmbInstructor.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jCmbInstructor.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jCmbInstructorActionPerformed(evt);
+      }
+    });
 
     jCmbDept.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jCmbDept.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Dept.", "Accounting", "Art", "Biology", "Black Studies", "Col Business & Management", "Communication & Digital Media", "Chemistry", "Computer Info Syst", "Criminal Justice", "Communication", "Computer Science", "Elec & Computer Engr", "Economics", "Education Leadership", "English Lang Program", "English", "Educational Tech & Development", "Engineering Tech Management", "Finance", "French", "Geography", "German", "Gender Studies", "History", "Honors", "Health Sciences", "Japanese", "Kinesiology", "Latin", "Law", "Leadership and Service", "Administrative Science", "Mathematical Sciences", "Mechanical Engr", "Master of Energy & Materials", "Modern Foreign Lang", "Management", "Marketing", "Medical Laboratory Science", "Music Education", "Music", "Natural Science", "Nursing", "Occupational Therapy", "Philosophy", "Physics", "Political Science", "Psychology", "Robert Fellows Seminar", "Rhetoric & Prof Writing", "Sociology", "Spanish", "Social Work", "Teaching Chinese As a Foreign", "Teacher Education--Mis/Sec Sch", "Teacher Education", "Theater", "Youth Services" }));
@@ -210,6 +209,13 @@ public class JPanelNewSection extends javax.swing.JPanel {
       }
     });
 
+    jFmtCapacity.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###"))));
+    jFmtCapacity.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jFmtCapacityActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
     jPanel2Layout.setHorizontalGroup(
@@ -217,10 +223,16 @@ public class JPanelNewSection extends javax.swing.JPanel {
       .addGroup(jPanel2Layout.createSequentialGroup()
         .addContainerGap()
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jLabel3)
           .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jCmbDept, 0, 261, Short.MAX_VALUE)
-              .addGroup(jPanel2Layout.createSequentialGroup()
+            .addComponent(jBtnSubmitMod)
+            .addGap(18, 18, 18)
+            .addComponent(jBtnBackMod))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+              .addComponent(jCmbInstructor, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(jCmbDept, javax.swing.GroupLayout.Alignment.LEADING, 0, 259, Short.MAX_VALUE)
+              .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabelUsername)
                   .addComponent(jLabelPassword3))
@@ -234,42 +246,31 @@ public class JPanelNewSection extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabelUsername1)
-                  .addComponent(jtxtCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(jtxtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jCmbType, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                  .addComponent(jtxtCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)))
               .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabelPassword1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabelPassword1)
+                  .addComponent(jtxtSectionNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelPassword9)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabelPassword9)
+                  .addComponent(jFmtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabelPassword10))))
-          .addComponent(jLabel3)
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addComponent(jBtnSubmitMod)
-            .addGap(18, 18, 18)
-            .addComponent(jBtnBackMod))
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jCmbInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jtxtSectionNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jCmbType, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jLabelPassword10))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabelPassword12)
-                  .addComponent(jCmbTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                  .addComponent(jLabelPassword14)
-                  .addComponent(jFmtStartDate)
-                  .addComponent(jLabelPassword13)
-                  .addComponent(jFmtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                  .addComponent(jCmbTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+          .addGroup(jPanel2Layout.createSequentialGroup()
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+              .addComponent(jLabelPassword14)
+              .addComponent(jFmtStartDate)
+              .addComponent(jLabelPassword13)
+              .addComponent(jFmtEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
         .addGap(122, 122, 122))
     );
     jPanel2Layout.setVerticalGroup(
@@ -277,7 +278,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
       .addGroup(jPanel2Layout.createSequentialGroup()
         .addContainerGap()
         .addComponent(jLabel3)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addGroup(jPanel2Layout.createSequentialGroup()
             .addComponent(jLabelUsername)
             .addGap(1, 1, 1)
@@ -285,29 +286,26 @@ public class JPanelNewSection extends javax.swing.JPanel {
               .addComponent(jCmbDept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jCmbCourseNum, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jLabelPassword3)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(jtxtSectionNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jCmbInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jtxtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jCmbTerm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jCmbType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-              .addComponent(jtxtCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                  .addComponent(jLabelPassword)
-                  .addComponent(jLabelUsername1))
-                .addGap(25, 25, 25)))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(jLabelPassword3)
               .addComponent(jLabelPassword1)
               .addComponent(jLabelPassword9)
-              .addComponent(jLabelPassword12)
-              .addComponent(jLabelPassword10))
-            .addGap(31, 31, 31)))
+              .addComponent(jLabelPassword10)
+              .addComponent(jLabelPassword12))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(jCmbInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jtxtSectionNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jCmbType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jCmbTerm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jFmtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+          .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jtxtCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+              .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabelPassword)
+                .addComponent(jLabelUsername1))
+              .addGap(25, 25, 25))))
         .addGap(25, 25, 25)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -323,7 +321,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jBtnSubmitMod)
           .addComponent(jBtnBackMod))
-        .addContainerGap(155, Short.MAX_VALUE))
+        .addContainerGap(150, Short.MAX_VALUE))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -366,7 +364,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
       section.course_number = jCmbCourseNum.getSelectedItem().toString();
       section.section_number = Integer.parseInt(jtxtSectionNumber.getText());
       section.available = true;
-      section.capacity = Integer.parseInt(jtxtCapacity.getText());
+      section.capacity = Integer.parseInt(jFmtCapacity.getText());
       section.seats_available = section.capacity;
       section.status = "Open";
       section.term = jCmbTerm.getSelectedItem().toString();
@@ -431,7 +429,25 @@ public class JPanelNewSection extends javax.swing.JPanel {
 
   private void jCmbCourseNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmbCourseNumActionPerformed
     GUIController.buildCourseNameTextBox();
+    
+    // Get next section number for this course
+    CourseSection section = new CourseSection();
+    
+    section.course_number = jCmbCourseNum.getSelectedItem().toString();
+    
+    jtxtSectionNumber.setText(GUIController.buildSectionNumberText(section));
   }//GEN-LAST:event_jCmbCourseNumActionPerformed
+
+  private void jCmbInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmbInstructorActionPerformed
+
+  }//GEN-LAST:event_jCmbInstructorActionPerformed
+
+  private void jFmtCapacityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFmtCapacityActionPerformed
+    // Update room combo box model to list rooms with AT LEAST the specified
+    // capacity
+    roomBox.setModel(GUIController.buildRoomComboBox(Integer.parseInt(jFmtCapacity.getText())));
+    roomColumn.setCellEditor(new DefaultCellEditor(roomBox));
+  }//GEN-LAST:event_jFmtCapacityActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -442,6 +458,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
   public javax.swing.JComboBox jCmbInstructor;
   private javax.swing.JComboBox jCmbTerm;
   private javax.swing.JComboBox jCmbType;
+  private javax.swing.JFormattedTextField jFmtCapacity;
   private javax.swing.JFormattedTextField jFmtEndDate;
   private javax.swing.JFormattedTextField jFmtStartDate;
   private javax.swing.JLabel jLabel3;
@@ -458,7 +475,6 @@ public class JPanelNewSection extends javax.swing.JPanel {
   private javax.swing.JPanel jPanel2;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JTable jTblMeetingDays;
-  private javax.swing.JTextField jtxtCapacity;
   public javax.swing.JTextField jtxtCourseName;
   private javax.swing.JTextField jtxtSectionNumber;
   // End of variables declaration//GEN-END:variables

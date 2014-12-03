@@ -21,7 +21,7 @@ public class CourseSection
   public Timestamp updated_at;
   
   public CourseSection() {
-    
+
   }
   
   public CourseSection(String course_number, int section_number, boolean available, 

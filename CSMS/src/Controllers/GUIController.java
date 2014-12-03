@@ -6,6 +6,7 @@
 
 package Controllers;
 
+import BusinessObjects.CourseSection;
 import GUI.*;
 import java.awt.*;
 import java.sql.ResultSet;
@@ -17,13 +18,14 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class GUIController {
-
-  //CardLayout cards;
-  static JPanel cardPanel;
-  public static JPanelNewSection newSectionCard = new JPanelNewSection();
+  // Controllers
   public static Controllers.DBMgr db = new Controllers.DBMgr();
   public static Controllers.UsersController users = new Controllers.UsersController();
   public static Controllers.CourseSectionController coursesections = new Controllers.CourseSectionController();
+  
+  //CardLayout cards;
+  static JPanel cardPanel;
+  public static JPanelNewSection newSectionCard = new JPanelNewSection();
   public static JPanelCourseListing courseListingCard = new JPanelCourseListing();
   public static JPanelCourseSearch courseSearchCard = new JPanelCourseSearch();
   
@@ -138,6 +140,62 @@ public class GUIController {
     DefaultComboBoxModel model = new DefaultComboBoxModel(numbers.toArray());
     newSectionCard.jCmbCourseNum.setModel(model);
   }
+  
+  public static DefaultComboBoxModel buildTimeComboBox() {
+    ArrayList<String> times = new ArrayList<>();
+    
+    ResultSet rs = db.getTimes();
+    
+    try {
+      while(rs.next()) {
+        times.add(rs.getString("time"));
+      }
+    } catch(Exception ex) {
+      System.out.println(ex);
+    }
+    
+    DefaultComboBoxModel model = new DefaultComboBoxModel(times.toArray());
+    
+    // Return combo box model
+    return model;
+  }
+  
+  public static DefaultComboBoxModel buildRoomComboBox(int capacity) {
+    ArrayList<String> roomNumbers = new ArrayList<>();
+    
+    ResultSet rs = db.getRooms(capacity);
+    
+    try {
+      while(rs.next()) {
+        roomNumbers.add(rs.getString("room_number"));
+      }
+    } catch(Exception ex) {
+      System.out.println(ex);
+    }
+    
+    DefaultComboBoxModel model = new DefaultComboBoxModel(roomNumbers.toArray());
+    
+    // Return combo box model
+    return model;
+  }
+  
+  public static String buildSectionNumberText(CourseSection section) {
+    int nextSectionNumber = 1;
+    
+    ResultSet rs = db.findCourseSections(section);
+    
+    try {
+      while(rs.next()) {
+        if (nextSectionNumber == rs.getInt("section_number")) {
+          nextSectionNumber++;
+        }
+      }
+    } catch(Exception ex) {
+      System.out.println(ex);
+    }
+    
+    return String.valueOf(nextSectionNumber);
+  }
 
   public static DefaultTableModel buildTable() throws SQLException {
     ResultSet rs = db.getCourseSections();
@@ -145,7 +203,7 @@ public class GUIController {
     int rowCount = 0;
     
     // names of columns
-    Vector<String> columnNames = new Vector<String>();
+    Vector<String> columnNames = new Vector<>();
     int columnCount = metaData.getColumnCount();
 
     columnNames.add("Course #");
@@ -159,9 +217,9 @@ public class GUIController {
     columnNames.add("Students");
     
     // data of the table
-    Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+    Vector<Vector<Object>> data = new Vector<>();
     while (rs.next()) {
-        Vector<Object> vector = new Vector<Object>();
+        Vector<Object> vector = new Vector<>();
         for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
             vector.add(rs.getObject(columnIndex));
         }

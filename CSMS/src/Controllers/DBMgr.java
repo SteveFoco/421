@@ -2,8 +2,6 @@ package Controllers;
 
 import BusinessObjects.*;
 import java.sql.*;
-import java.util.Vector;
-import javax.swing.table.DefaultTableModel;
 
 public class DBMgr {
   private Connection conn;
@@ -67,6 +65,43 @@ public class DBMgr {
     }
     
     return null;
+  }
+  
+  public ResultSet getTimes() {
+    ResultSet results = null;
+    
+    String select = "SELECT TIME_FORMAT(time, '%h:%i %p') AS time FROM times";
+    
+    try
+    {
+      pst = conn.prepareStatement(select);
+      results = pst.executeQuery();
+    }
+    catch (SQLException ex)
+    {
+      System.out.println(ex);
+    }
+    
+    return results;
+  }
+  
+  public ResultSet getRooms(int capacity) {
+    ResultSet results = null;
+    
+    String select = "SELECT * FROM rooms WHERE capacity >= ?";
+    
+    try
+    {
+      pst = conn.prepareStatement(select);
+      pst.setInt(1, capacity);
+      results = pst.executeQuery();
+    }
+    catch (SQLException ex)
+    {
+      System.out.println(ex);
+    }
+    
+    return results;
   }
   
   public ResultSet getProfessors(String dept) {
@@ -140,27 +175,33 @@ public class DBMgr {
   public ResultSet findCourseSections(CourseSection section) {
     ResultSet result = null;
     
-    String select = "SELECT *" +
-                    "FROM course_sections" +
-                    "WHERE (" +
-                    "course_number LIKE ? AND" +
-                    "section_number = ? AND" +
-                    "available = ? AND" +
-                    "capacit?y = ? AND" +
-                    "seats_available = ? AND" +
-                    "status LIKE ? AND" +
-                    "term LIKE ? AND" +
-                    "student_count = ? AND" +
-                    "type LIKE ? AND" +
-                    "start_date = ? AND" +
-                    "last_date = ?" +
-                    ")";
+    String select = "SELECT * " +
+                    "FROM course_sections " +
+                    "WHERE ( " +
+                    "course_number LIKE ? AND " +
+                    "section_number <=> ? AND " +
+                    "available <=> ? AND " +
+                    "capacity <=> ? AND " +
+                    "seats_available <=> ? AND " +
+                    "status LIKE ? AND " +
+                    "term LIKE ? AND " +
+                    "student_count <=> ? AND " +
+                    "type LIKE ? AND " +
+                    "start_date <=> ? AND " +
+                    "last_date <=> ? " +
+                    ") " +
+                    "ORDER BY section_number ASC";
     
     try
     {
       pst = conn.prepareStatement(select);
       pst.setString(1, "%"+section.course_number+"%");
-      pst.setInt(2, section.section_number);
+      if (section.section_number > 0)
+        pst.setInt(2, section.section_number);
+      else {
+        System.out.println("here");
+        pst.setNull(2, Types.NULL);
+      }
       pst.setInt(3, section.available ? 1 : 0);
       pst.setInt(4, section.capacity);
       pst.setInt(5, section.seats_available);
@@ -170,6 +211,7 @@ public class DBMgr {
       pst.setString(9, "%"+section.type+"%");
       pst.setDate(10, section.start_date);
       pst.setDate(11, section.last_date);
+      System.out.println(pst);
       result = pst.executeQuery();
     }
     catch (SQLException ex)
@@ -227,7 +269,7 @@ public class DBMgr {
     return result;
   }
   
-    public ResultSet saveMeetingDay(MeetingDay meeting_day) {
+  public ResultSet saveMeetingDay(MeetingDay meeting_day) {
     ResultSet result = null;
     
     String insert = "INSERT INTO meeting_days (" +

@@ -39,10 +39,17 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCmbDept" alignment="0" pref="261" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jBtnSubmitMod" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jBtnBackMod" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jCmbInstructor" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jCmbDept" alignment="0" pref="259" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabelUsername" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabelPassword3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -52,7 +59,7 @@
                           </Group>
                           <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabelPassword" min="-2" max="-2" attributes="0"/>
                                       <Component id="jCmbCourseNum" min="-2" pref="99" max="-2" attributes="0"/>
@@ -61,54 +68,39 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabelUsername1" min="-2" max="-2" attributes="0"/>
                                       <Component id="jtxtCourseName" min="-2" pref="315" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jtxtCapacity" min="-2" pref="59" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jCmbType" min="-2" pref="95" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabelPassword1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabelPassword1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jtxtSectionNumber" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jLabelPassword9" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabelPassword9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jFmtCapacity" min="-2" pref="50" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabelPassword10" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jBtnSubmitMod" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jBtnBackMod" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jCmbInstructor" min="-2" pref="261" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jtxtSectionNumber" min="-2" pref="106" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jScrollPane1" min="-2" pref="564" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jCmbType" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <Component id="jLabelPassword10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabelPassword12" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jCmbTerm" min="-2" pref="108" max="-2" attributes="0"/>
+                                      <Component id="jCmbTerm" min="-2" pref="70" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabelPassword14" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jFmtStartDate" max="32767" attributes="0"/>
-                                      <Component id="jLabelPassword13" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jFmtEndDate" min="-2" pref="122" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jScrollPane1" min="-2" pref="564" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabelPassword14" min="-2" max="-2" attributes="0"/>
+                              <Component id="jFmtStartDate" max="32767" attributes="0"/>
+                              <Component id="jLabelPassword13" min="-2" max="-2" attributes="0"/>
+                              <Component id="jFmtEndDate" min="-2" pref="122" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -121,7 +113,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabelUsername" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
@@ -130,35 +122,31 @@
                               <Component id="jCmbCourseNum" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelPassword3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtxtSectionNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCmbInstructor" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtxtCapacity" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCmbTerm" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCmbType" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jtxtCourseName" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabelPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabelUsername1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelPassword3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelPassword1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelPassword9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelPassword12" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelPassword10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelPassword12" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jCmbInstructor" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtxtSectionNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jCmbType" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jCmbTerm" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jFmtCapacity" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Component id="jtxtCourseName" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabelPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelUsername1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
@@ -179,7 +167,7 @@
                       <Component id="jBtnSubmitMod" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jBtnBackMod" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="155" max="32767" attributes="0"/>
+                  <EmptySpace pref="150" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -273,19 +261,15 @@
             <Property name="text" type="java.lang.String" value="Capacity:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtxtCapacity">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Trebuchet MS" size="14" style="0"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JComboBox" name="jCmbInstructor">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="14" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCmbInstructorActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -485,6 +469,16 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="jFmtCapacity">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format format="#,###" subtype="-1" type="0"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFmtCapacityActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
