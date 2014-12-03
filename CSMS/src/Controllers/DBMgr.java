@@ -69,6 +69,36 @@ public class DBMgr {
     return null;
   }
   
+  public ResultSet getTerms() {
+    rs = null;
+    
+    try {
+      String query = "SELECT term, id FROM schedule_terms ORDER BY id ASC";
+      rs = st.executeQuery(query);
+      
+    } catch(Exception ex) {
+      System.out.println(ex);    
+    }
+    
+    return rs;
+  }
+  
+  public ResultSet getCapacity(String room) {
+    rs = null;
+    
+    try {
+      String query = "SELECT capacity "
+                   + "FROM rooms "
+                   + "WHERE room_number = '" + room + "'";
+      rs = st.executeQuery(query);
+      
+    } catch(Exception ex) {
+      System.out.println(ex);    
+    }  
+    
+    return rs;
+  }
+  
   public ResultSet getProfessors(String dept) {
     rs = null;
     
