@@ -108,7 +108,7 @@ public class DBMgr {
     rs = null;
     
     try {
-      String query = "SELECT term, id FROM schedule_terms ORDER BY id ASC";
+      String query = "SELECT term, id FROM terms ORDER BY id ASC";
       rs = st.executeQuery(query);
       
     } catch(Exception ex) {
