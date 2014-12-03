@@ -46,6 +46,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
         roomBox.setModel(GUIController.buildRoomComboBox(0));
         
         dayBox = new JComboBox();
+        dayBox.addItem("");
         dayBox.addItem("M");
         dayBox.addItem("T");
         dayBox.addItem("W");
@@ -127,6 +128,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
     jtxtCourseName.setEditable(false);
     jtxtCourseName.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
+    jtxtSectionNumber.setEditable(false);
     jtxtSectionNumber.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
     jLabelPassword9.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N

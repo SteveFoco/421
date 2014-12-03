@@ -207,41 +207,37 @@ public class DBMgr {
     
     String select = "SELECT * " +
                     "FROM course_sections " +
-                    "WHERE ( " +
-                    "course_number LIKE ? AND " +
-                    "section_number <=> ? AND " +
-                    "available <=> ? AND " +
-                    "capacity <=> ? AND " +
-                    "seats_available <=> ? AND " +
-                    "status LIKE ? AND " +
-                    "term LIKE ? AND " +
-                    "student_count <=> ? AND " +
-                    "type LIKE ? AND " +
-                    "start_date <=> ? AND " +
-                    "last_date <=> ? " +
-                    ") " +
-                    "ORDER BY section_number ASC";
+                    "WHERE ( ";
+    
+    if (section.course_number != null)
+      select += "course_number LIKE '%" + section.course_number + "%' AND ";
+    if (section.section_number != 0)
+      select += "section_number = " + section.section_number + " AND ";
+    if (section.capacity != 0)
+      select += "capacity = " + section.capacity + " AND ";
+    if (section.seats_available != 0)
+      select += "seats_available = " + section.seats_available + " AND ";
+    if (section.status != null)
+      select += "status LIKE '%" + section.status + "%' AND ";
+    if (section.student_count != 0)
+      select += "student_count = " + section.student_count + " AND ";
+    if (section.type != null)
+      select += "type LIKE '%" + section.type + "%' AND ";
+    if (section.start_date != null)
+      select += "start_date = " + section.start_date + " AND ";
+    if (section.last_date != null)
+      select += "last_date = " + section.last_date + " AND ";
+    if (section.term != null)
+      select += "term LIKE '%" + section.term + "%' ";
+    else
+      select += "term LIKE '%%' ";
+      
+    select += ") " +
+              "ORDER BY section_number ASC";
     
     try
     {
       pst = conn.prepareStatement(select);
-      pst.setString(1, "%"+section.course_number+"%");
-      if (section.section_number > 0)
-        pst.setInt(2, section.section_number);
-      else {
-        System.out.println("here");
-        pst.setNull(2, Types.NULL);
-      }
-      pst.setInt(3, section.available ? 1 : 0);
-      pst.setInt(4, section.capacity);
-      pst.setInt(5, section.seats_available);
-      pst.setString(6, "%"+section.status+"%");
-      pst.setString(7, "%"+section.term+"%");
-      pst.setInt(8, section.student_count);
-      pst.setString(9, "%"+section.type+"%");
-      pst.setDate(10, section.start_date);
-      pst.setDate(11, section.last_date);
-      System.out.println(pst);
       result = pst.executeQuery();
     }
     catch (SQLException ex)

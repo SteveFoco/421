@@ -163,6 +163,7 @@ public class GUIController {
     
     ResultSet rs = db.getTimes();
     
+    times.add("");
     try {
       while(rs.next()) {
         times.add(rs.getString("time"));
@@ -182,6 +183,7 @@ public class GUIController {
     
     ResultSet rs = db.getRooms(capacity);
     
+    roomNumbers.add("");
     try {
       while(rs.next()) {
         roomNumbers.add(rs.getString("room_number"));
