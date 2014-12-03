@@ -93,6 +93,23 @@ public class GUIController {
     newSectionCard.jCmbDept.setModel(model);
   }
   
+  public static void buildTermComboBox() {
+    ArrayList<String> terms = new ArrayList<>();
+    
+    ResultSet rs = db.getTerms();
+    
+    try {
+      while(rs.next()) {
+        terms.add(rs.getString("term"));
+      }        
+    } catch(Exception ex) {
+      System.out.println(ex);
+    }
+    
+    DefaultComboBoxModel model = new DefaultComboBoxModel(terms.toArray());
+    newSectionCard.jCmbTerm.setModel(model);
+  }
+  
   public static void buildProfComboBox() {
     ArrayList<String> names = new ArrayList<>();
     

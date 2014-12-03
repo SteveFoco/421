@@ -456,7 +456,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
   public javax.swing.JComboBox jCmbCourseNum;
   public javax.swing.JComboBox jCmbDept;
   public javax.swing.JComboBox jCmbInstructor;
-  private javax.swing.JComboBox jCmbTerm;
+  public javax.swing.JComboBox jCmbTerm;
   private javax.swing.JComboBox jCmbType;
   private javax.swing.JFormattedTextField jFmtCapacity;
   private javax.swing.JFormattedTextField jFmtEndDate;
