@@ -281,7 +281,9 @@ public class GUIController {
       public void run() {
         createGui();
       }
-    }); 
+    });
+    
+    db.startPinger();
   }
   
   public GUIController() {        

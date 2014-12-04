@@ -1,6 +1,7 @@
 package Controllers;
 
 import BusinessObjects.*;
+import Helpers.DatabasePinger;
 import java.sql.*;
 
 public class DBMgr {
@@ -8,9 +9,11 @@ public class DBMgr {
   private Statement st;
   private PreparedStatement pst;
   private ResultSet rs;
+  DatabasePinger pinger;
   
   public DBMgr() {
     try {
+
       Class.forName("com.mysql.jdbc.Driver");
       
       conn = DriverManager.getConnection("jdbc:mysql://160.153.57.72:3306/csms","sjfoco","Password01");
@@ -19,6 +22,12 @@ public class DBMgr {
     } catch(Exception ex) {
       System.out.println("Error: " +ex);
     }
+    
+    this.pinger = new DatabasePinger(conn);
+  }
+  
+  public void startPinger() {
+    pinger.ping();
   }
   
   public String getPassword(String user) {
