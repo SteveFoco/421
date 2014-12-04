@@ -4,6 +4,7 @@ import BusinessObjects.CourseSection;
 import BusinessObjects.MeetingDay;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -15,7 +16,7 @@ public class CourseSectionController {
     
   }
   
-  public void addCourseSection(CourseSection section, MeetingDay [] days) {
+  public void addCourseSection(CourseSection section, ArrayList<MeetingDay> days) {
     Calendar cal = Calendar.getInstance();
     
     // Save CourseSection object
@@ -28,8 +29,6 @@ public class CourseSectionController {
     } catch (SQLException ex) {
       System.out.println(ex);
     }
-    
-    System.out.println(days);
     
     // Save MeetingDay objects
     for (MeetingDay md : days) {

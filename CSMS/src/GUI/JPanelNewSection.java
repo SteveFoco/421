@@ -411,10 +411,12 @@ public class JPanelNewSection extends javax.swing.JPanel {
 
           // Save MeetingDay to MeetingDay list
           days.add(day);
+          
+          day = new MeetingDay();
         }
       }
 
-      GUIController.coursesections.addCourseSection(section, days.toArray(new MeetingDay[days.size()]));
+      GUIController.coursesections.addCourseSection(section, days);
       
       JOptionPane.showMessageDialog(null, "Course has been created");
       try {

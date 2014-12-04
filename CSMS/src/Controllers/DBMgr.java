@@ -281,8 +281,6 @@ public class DBMgr {
       pst.setString(9, section.type);
       pst.setDate(10, section.start_date);
       pst.setDate(11, section.last_date);
-
-      System.out.println(pst);
       
       pst.execute();
       result = pst.getGeneratedKeys();
@@ -315,7 +313,9 @@ public class DBMgr {
       pst.setString(3, meeting_day.day);
       pst.setTime(4, meeting_day.start_time);
       pst.setTime(5, meeting_day.end_time);
+      
       pst.execute();
+      
       result = pst.getGeneratedKeys();
     }
     catch (SQLException ex)
