@@ -40,7 +40,6 @@ public class DatabasePinger {
       @Override
       public void run() {
         try {
-          System.out.println("here");
           conn.isValid(10);
         } catch (SQLException ex) {
           System.err.println(ex);
