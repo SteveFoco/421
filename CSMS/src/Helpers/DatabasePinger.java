@@ -1,7 +1,6 @@
 package Helpers;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Timer;
@@ -45,6 +44,6 @@ public class DatabasePinger {
           System.err.println(ex);
         }
       }
-    }, 30 * 1000, 30 * 1000);
+    }, 10 * 1000, 10 * 1000);
   }
 }
