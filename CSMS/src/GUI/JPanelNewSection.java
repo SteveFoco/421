@@ -106,7 +106,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
         jLabelUsername1.setText("Course Name:");
 
         jLabelPassword1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabelPassword1.setText("Section Number:");
+        jLabelPassword1.setText("Section:");
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         jLabel3.setText("New Course Section Entry");
@@ -208,6 +208,7 @@ public class JPanelNewSection extends javax.swing.JPanel {
         });
 
         jFmtCapacity.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###"))));
+        jFmtCapacity.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jFmtCapacity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFmtCapacityActionPerformed(evt);
@@ -251,18 +252,21 @@ public class JPanelNewSection extends javax.swing.JPanel {
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabelPassword1)
                                             .addComponent(jtxtSectionNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelPassword9)
-                                            .addComponent(jFmtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(20, 20, 20)
+                                                .addComponent(jFmtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabelPassword9)))
+                                        .addGap(32, 32, 32)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jCmbType, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabelPassword10))
                                         .addGap(18, 18, 18)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelPassword12)
-                                            .addComponent(jCmbTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(jCmbTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelPassword12))))))
                         .addGap(122, 122, 122))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -457,7 +461,6 @@ public class JPanelNewSection extends javax.swing.JPanel {
     roomBox.setModel(GUIController.buildRoomComboBox(Integer.parseInt(jFmtCapacity.getText())));
     roomColumn.setCellEditor(new DefaultCellEditor(roomBox));
   }//GEN-LAST:event_jFmtCapacityActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private datechooser.beans.DateChooserCombo dateChooserEnd;
